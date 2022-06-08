@@ -16,8 +16,6 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 
 ## 🐺 C4: Set up repos
 - [ ] Add sponsor to this private repo with 'maintain' level access.
-- [ ] Send the sponsor contact the url for this repo to follow the instructions below and add contracts here. 
-- [ ] Delete this checklist and wait for sponsor to complete their checklist.
 
 ## ⭐️ Sponsor: Provide contest details
 
