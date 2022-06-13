@@ -76,7 +76,7 @@ _**Pull request:**_ [[New Operator] - Paraswap #109](https://github.com/NestedFi
 New operator to swap tokens in [Paraswap](https://app.paraswap.io/)
 This operatorcan be deployed on every chains where [Paraswap](https://app.paraswap.io/) is available.
 
-### Yearn Curve vaults
+#### Yearn Curve vaults
 _**Pull request:**_ [[New Operator] StakeDAO + Yearn (curve pools) #119](https://github.com/NestedFi/nested-core-lego/pull/119)
 New operator to deposit/withdraw in [Yearn](https://yearn.finance/#/vaults) vaults that use [Curve](https://curve.fi/) managed assets.
 This operatorcan be deployed on every chains where [Yearn](https://yearn.finance/#/vaults) has Curve vault available.
