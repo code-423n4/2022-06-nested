@@ -165,6 +165,10 @@ Only tests that can be run in the environment you have configured will be run to
 > The rest of the coverage is in the ETH fork coverage context under [CurveHelpers - tested on ETH fork](#curvehelpers-tested-on-eth-fork).
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-3.png"></div>
 
+#### Beefy operators
+<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-5.png"></div>
+<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-6.png"></div>
+
 
 ## Links
 
