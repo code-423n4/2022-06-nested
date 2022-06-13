@@ -54,12 +54,13 @@ The preview version has been audited 4 times (from oldest to newest):
 ⚠️ **All issues already surfaced in the [previous audit](https://code4rena.com/reports/2022-02-nested) will be "invalid"**.
 
 ## New version
+This new version includes the corrections of the previous audits and new features.
 
 ### Ownership architecture
 _**Pull request:**_ [feat: OwnerProxy #116](https://github.com/NestedFi/nested-core-lego/pull/116)
 In order to complete the ownership architecture, we need the OwnerProxy contract in charge of executing scripts for the Timelock (run transactions atomically).
 
-### New operators
+### Operators
 #### Beefy Single asset vault
 _**Pull request:**_ [[New Operator] - Beefy Single Asset Vault #107](https://github.com/NestedFi/nested-core-lego/pull/107)
 New operator to deposit/withdraw in [**Beefy single asset vaults**](https://app.beefy.finance/)
@@ -83,14 +84,14 @@ This operatorcan be deployed on every chains where [Yearn](https://yearn.finance
 > **NOTE**: This operator is almost identical to the **StakeDAO operator**, so we have only included the Yearn operator in the audit scope and not the StakeDAO one.
 We factorized the code of these two operators in the libraries `StakingLPVaultHelpers.sol` and `CurveHelpers.sol`.
 
-### New entry/exit fees managment
+### Entry/exit fees managment
 _**Pull request:**_ [feat: Upgradeable Fees #113](https://github.com/NestedFi/nested-core-lego/pull/113)
 We had introduced upgradeability of fees and the notion of "EntryFees/ExitFees" (new values) :
 
 - `EntryFees` : Applied when funds stay inside of the portfolio.
 - `ExitFees` : Applied when funds are withdrawed from the portfolio.
 
-### New Nested asset tokenURI mechanism
+### Nested asset tokenURI mechanism
 _**Pull request:**_ [feat: Update tokenURI mechanism #103](https://github.com/NestedFi/nested-core-lego/pull/103)
 We updated the mechanism to set the tokenURI:
 - Remove mintWithMetadata and backfillTokenURI (with the _tokenURIs map).
