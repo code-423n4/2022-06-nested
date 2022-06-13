@@ -24,7 +24,7 @@ The preview version has been audited 4 times (from oldest to newest):
 - [CodeArena 2021-11](https://code4rena.com/reports/2021-11-nested)
 - [CodeArena 2022-02](https://code4rena.com/reports/2022-02-nested)
 
-⚠️ **We will "dispute" all the issues that were already surfaced in the [previous audit](https://code4rena.com/reports/2022-02-nested)**.
+⚠️ **All issues already surfaced in the [previous audit](https://code4rena.com/reports/2022-02-nested) will be "invalid"**.
 
 ## New version
 
