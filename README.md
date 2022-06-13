@@ -127,7 +127,7 @@ We're maintaining a list of all rebase tokens (source coingecko, which is well m
 ## Coverage
 
 Run `npx hardhat coverage` to run test and generate the coverage summary.
-> When you run `npx hardhat coverage`, test wil be ran with the context you specified in the [.env configuration](https://github.com/NestedFi/nested-core-lego#testing).
+> When you run `npx hardhat coverage`, test will be ran with the context you specified in the [.env configuration](https://github.com/NestedFi/nested-core-lego#testing).
 Only tests that can be run in the environment you have configured will be run to generate the coverage summary. 
 
 >To get the total coverage, it is necessary to run `npx hardhat coverage` with all the existing configurations, to reach all the written tests.
