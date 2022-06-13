@@ -13,9 +13,38 @@
 - Ends June 18, 2022 19:59 UTC
 
 ## Scope
+**TOTAL = 2 004 LOC & 21 Contracts**
+### Core scope
+| Contract name                                             |                                                      Github URL                                                                    | LoC |
+|-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|----:|
+| NestedFactory                                             | [NestedFactory.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/NestedFactory.sol)                            | 452 |
+| OperatorResolver                                          | [OperatorResolver.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/OperatorResolver.sol)                      | 59  |
+| Withdrawer                                                | [Withdrawer.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/Withdrawer.sol)                                  | 18  |
+| /abstracts/MixinOperatorResolver                          | [MixinOperatorResolver.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/abstracts/MixinOperatorResolver.sol)  | 68  |
+| /abstracts/OwnableProxyDelegation                         | [OwnableProxyDelegation.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/abstracts/OwnableProxyDelegation.sol)| 35  |
+| /libraries/ExchangeHelpers                                | [ExchangeHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/ExchangeHelpers.sol)              | 21  |
 
-**TODO**
+### Operator scope
+| Contract name                                             |                                                                    Github URL                                                                                | LoC |
+|-----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|----:|
+|/operators/Beefy/BeefyVaultOperator                        | [BeefyVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/BeefyVaultOperator.sol)                            |  62 |
+|/operators/Beefy/BeefyVaultStorage                         | [BeefyVaultStorage.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/BeefyVaultStorage.sol)                              |  20 |
+|/operators/Beefy/lp/BeefyZapBiswapLPVaultOperator          | [BeefyZapBiswapLPVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/lp/BeefyZapBiswapLPVaultOperator.sol)   | 167 |
+|/operators/Beefy/lp/BeefyZapUniswapLPVaultOperator         | [BeefyZapUniswapLPVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/lp/BeefyZapUniswapLPVaultOperator.sol) | 166 |
+|/operators/Paraswap/ParaswapOperator                       | [ParaswapOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Paraswap/ParaswapOperator.sol)                             |  35 |
+|/operators/Yearn/YearnCurveVaultOperator                   | [YearnCurveVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Yearn/YearnCurveVaultOperator.sol)                  | 222 |
+|/operators/Yearn/YearnVaultStorage                         | [YearnVaultStorage.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Yearn/YearnVaultStorage.sol)                              |  24 |
+|/operators/StakeDAO/StakeDaoCurveStrategyOperator          | [StakeDaoCurveStrategyOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/StakeDAO/StakeDaoCurveStrategyOperator.sol)   | 230 |
+|/operators/StakeDAO/StakeDaoStrategyStorage                | [StakeDaoStrategyStorage.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/StakeDAO/StakeDaoStrategyStorage.sol)               |  25 |
+|/libraries/CurveHelpers                                    | [CurveHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/CurveHelpers.sol)                                              | 105 |
 
+### Governance scope
+| Contract name                                   |                                                                    Github URL                                                                  | LoC |
+|-------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|----:|
+|/governance/OwnerProxy                           | [OwnerProxy.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/governance/OwnerProxy.sol)                                   | 19  |
+|/governance/TimelockControllerEmergency          | [TimelockControllerEmergency.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/governance/TimelockControllerEmergency.sol) | 186 |
+|/governance/scripts/OperatorScripts              | [OperatorScripts.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/governance/scripts/OperatorScripts.sol)                 | 71  |
+ 
 ## Previous Audits
 
 The preview version has been audited 4 times (from oldest to newest):
