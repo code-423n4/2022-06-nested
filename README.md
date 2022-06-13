@@ -145,11 +145,11 @@ Only tests that can be run in the environment you have configured will be run to
 
 ### Coverage ran in ETH fork context
 #### Libraries - tested on ETH fork
-> The rest of the coverage is in the BSC fork coverage context under [Libraries - tested on BSC fork](#libraries-tested-on-bsc-fork).
+> The rest of the coverage is in the BSC fork coverage context under [Libraries - tested on BSC fork](#libraries---tested-on-bsc-fork).
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/eth-2.png"></div>
 
 #### CurveHelpers - tested on ETH fork
-> The rest of the coverage is in the BSC fork coverage context under [CurveHelpers - tested on BSC fork](#curvehelpers-tested-on-bsc-fork).
+> The rest of the coverage is in the BSC fork coverage context under [CurveHelpers - tested on BSC fork](#curvehelpers---tested-on-bsc-fork).
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/eth-3.png"></div>
 
 #### Yearn curve vault operator
@@ -158,11 +158,11 @@ Only tests that can be run in the environment you have configured will be run to
 
 ### Coverage ran in BSC fork context
 #### Libraries - tested on BSC fork
-> The rest of the coverage is in the ETH fork coverage context under [Libraries - tested on ETH fork](#libraries-tested-on-eth-fork).
+> The rest of the coverage is in the ETH fork coverage context under [Libraries - tested on ETH fork](#libraries---tested-on-eth-fork).
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-2.png"></div>
 
 #### CurveHelpers - tested on BSC fork
-> The rest of the coverage is in the ETH fork coverage context under [CurveHelpers - tested on ETH fork](#curvehelpers-tested-on-eth-fork).
+> The rest of the coverage is in the ETH fork coverage context under [CurveHelpers - tested on ETH fork](#curvehelpers---tested-on-eth-fork).
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-3.png"></div>
 
 #### Beefy operators
