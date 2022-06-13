@@ -136,7 +136,7 @@ Only tests that can be run in the environment you have configured will be run to
 
 ### Coverage ran without fork
 #### Global coverage - tested without fork
-> the missing coverage is tested in the [BSC fork context](#coverage-ran-in-bsc-fork-context) or the [ETH fork context](#coverage-ran-in-eth-fork-context)
+> The missing coverage is tested in the [BSC fork context](#coverage-ran-in-bsc-fork-context) or the [ETH fork context](#coverage-ran-in-eth-fork-context)
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/without-fork-1.png"></div>
 
 #### Main contracts - tested without fork
