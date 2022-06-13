@@ -57,7 +57,47 @@ The preview version has been audited 4 times (from oldest to newest):
 
 ## New version
 
-**TODO**
+### Ownership architecture
+_**Pull request:**_ [feat: OwnerProxy #116](https://github.com/NestedFi/nested-core-lego/pull/116)
+In order to complete the ownership architecture, we need the OwnerProxy contract in charge of executing scripts for the Timelock (run transactions atomically).
+
+### New operators
+#### Beefy Single asset vault
+_**Pull request:**_ [[New Operator] - Beefy Single Asset Vault #107](https://github.com/NestedFi/nested-core-lego/pull/107)
+New operator to deposit/withdraw in [**Beefy single asset vaults**](https://app.beefy.finance/)
+This operatorcan be deployed on every chains where Beefy is available.
+
+#### Beefy LP vault
+_**Pull request:**_ [[New Operator] - Beefy LP Vault #114](https://github.com/NestedFi/nested-core-lego/pull/114)
+New operator to deposit/withdraw in [**Beefy LP asset vaults**](https://app.beefy.finance/)
+This operatorcan be deployed on every chains where Beefy is available.
+
+#### Paraswap
+_**Pull request:**_ [[New Operator] - Paraswap #109](https://github.com/NestedFi/nested-core-lego/pull/109)
+New operator to swap tokens in [Paraswap](https://app.paraswap.io/)
+This operatorcan be deployed on every chains where [Paraswap](https://app.paraswap.io/) is available.
+
+### Yearn Curve vaults
+_**Pull request:**_ [[New Operator] StakeDAO + Yearn (curve pools) #119](https://github.com/NestedFi/nested-core-lego/pull/119)
+New operator to deposit/withdraw in [Yearn](https://yearn.finance/#/vaults) vaults that use [Curve](https://curve.fi/) managed assets.
+This operatorcan be deployed on every chains where [Yearn](https://yearn.finance/#/vaults) has Curve vault available.
+
+> **NOTE**: This operator is almost identical to the **StakeDAO operator**, so we have only included the Yearn operator in the audit scope and not the StakeDAO one.
+We factorized the code of these two operators in the libraries `StakingLPVaultHelpers.sol` and `CurveHelpers.sol`.
+
+### New entry/exit fees managment
+_**Pull request:**_ [feat: Upgradeable Fees #113](https://github.com/NestedFi/nested-core-lego/pull/113)
+We had introduced upgradeability of fees and the notion of "EntryFees/ExitFees" (new values) :
+
+- `EntryFees` : Applied when funds stay inside of the portfolio.
+- `ExitFees` : Applied when funds are withdrawed from the portfolio.
+
+### New Nested asset tokenURI mechanism
+_**Pull request:**_ [feat: Update tokenURI mechanism #103](https://github.com/NestedFi/nested-core-lego/pull/103)
+We updated the mechanism to set the tokenURI:
+- Remove mintWithMetadata and backfillTokenURI (with the _tokenURIs map).
+- Add reveal/unrevealed URI
+- Add contract URI
 
 ## Known issues/topics
 
