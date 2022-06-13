@@ -433,11 +433,32 @@ On the other hand, the "Operational Multisig" can schedule/execute transactions 
 - Install Node > 12
 - Install Yarn
 - Run `yarn install`
-- Copy `.env.example` to a new file `.env`
-- Insert a dummy mnemonic and a mainnet api key in the .env
-- [Configure forks](#testing) in .env
+- Run `cp .env.example .env`
+- Insert a dummy mnemonic and a mainnet api key in the `.env` file
 
-**TODO** More details, how to run fork tests ?
+### Run tests
+Tests can be run without fork, with a BSC fork or with an ETH fork by running `yarn test`.
+You can configure how to run the tests by configuring your `.env` file as follow:
+
+- To run the tests **without fork**:
+```bash
+FORKING="false"
+```
+
+- To run the tests **with BSC fork**:
+```bash
+FORKING="true"
+FORK_CHAINID="56"
+FORK_URL="https://bsc-dataseed.binance.org/"
+```
+
+- To run the tests **with BSC fork**:
+```bash
+FORKING="true"
+FORK_CHAINID="1"
+FORK_URL="<YOUR_ETH_RPC_ENDPOINT_URL>"
+```
+
 
 ## Commands
 
