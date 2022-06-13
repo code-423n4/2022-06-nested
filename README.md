@@ -475,12 +475,6 @@ FORK_URL="<YOUR_ETH_RPC_ENDPOINT_URL>"
 - Run tests
     `yarn test`
 
-## Testing
-
-We have tests for BSC and ETH, with and withtout forking from mainnet.  
-In order to configure tests, you need to copy `.env.example` to `.env` and a fork url (through Alchemy or other providers) to retrieve mainnet state.  
-You will be able to run tests for ETH and BSC, with and without forking by changing your `.env`
-
 # License
 
 [GNU General Public License v3](https://www.gnu.org/licenses/gpl-3.0.html)
