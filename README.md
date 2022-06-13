@@ -86,9 +86,45 @@ We're maintaining a list of all rebase tokens (source coingecko, which is well m
 
 ## Coverage
 
-`npx hardhat coverage`
+Run `npx hardhat coverage` to run test and generate the coverage summary.
+> When you run `npx hardhat coverage`, test wil be ran with the context you specified in the [.env configuration](https://github.com/NestedFi/nested-core-lego#testing).
+Only tests that can be run in the environment you have configured will be run to generate the coverage summary. 
 
-**TODO** screenshots
+>To get the total coverage, it is necessary to run `npx hardhat coverage` with all the existing configurations, to reach all the written tests.
+
+>You can find the 3 existing configrations (BSC, ETH and without fork) in [.env.exemple](https://github.com/NestedFi/nested-core-lego/blob/master/.env.example) file.
+
+### Coverage ran without fork
+#### Global coverage - tested without fork
+> the missing coverage is tested in the [BSC fork context](#coverage-ran-in-bsc-fork-context) or the [ETH fork context](#coverage-ran-in-eth-fork-context)
+<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/without-fork-1.png"></div>
+
+#### Main contracts - tested without fork
+<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/without-fork-2.png"></div>
+
+
+### Coverage ran in ETH fork context
+#### Libraries - tested on ETH fork
+> The rest of the coverage is in the BSC fork coverage context under [Libraries - tested on BSC fork](#libraries-tested-on-bsc-fork).
+<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/eth-2.png"></div>
+
+#### CurveHelpers - tested on ETH fork
+> The rest of the coverage is in the BSC fork coverage context under [CurveHelpers - tested on BSC fork](#curvehelpers-tested-on-bsc-fork).
+<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/eth-3.png"></div>
+
+#### Yearn curve vault operator
+<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/eth-4.png"></div>
+
+
+### Coverage ran in BSC fork context
+#### Libraries - tested on BSC fork
+> The rest of the coverage is in the ETH fork coverage context under [Libraries - tested on ETH fork](#libraries-tested-on-eth-fork).
+<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-2.png"></div>
+
+#### CurveHelpers - tested on BSC fork
+> The rest of the coverage is in the ETH fork coverage context under [CurveHelpers - tested on ETH fork](#curvehelpers-tested-on-eth-fork).
+<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-3.png"></div>
+
 
 ## Links
 
