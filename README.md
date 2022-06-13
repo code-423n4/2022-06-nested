@@ -3,6 +3,97 @@
 
 <div align="center"><a href="https://nested.fi" > https://nested.fi </a></div>
 
+# Nested contest details
+- $33,250 USDC main award pot
+- $1,750 USDC gas optimization award pot
+- Join [C4 Discord](https://discord.gg/code4rena) to register
+- Submit findings [using the C4 form](https://code4rena.com/contests/2022-06-nested-contest/submit)
+- [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
+- Starts June 15, 2022 20:00 UTC
+- Ends June 18, 2022 19:59 UTC
+
+## Scope
+
+All the Solidity files are included in the audit scope, **expect the ones in the `contracts/mocks` folder**.
+
+## Previous Audits
+
+The preview version has been audited 4 times (from oldest to newest):
+- [Peckshield Audit Report v1.0](audits/PeckShield-Audit-Report-Nested-v1.0.pdf)
+- [Red4Sec Audit Report v1.0](audits/Red4Sec_Nested_Finance_Security_Audit_Report_v3.pdf)
+- [CodeArena 2021-11](https://code4rena.com/reports/2021-11-nested)
+- [CodeArena 2022-02](https://code4rena.com/reports/2022-02-nested)
+
+⚠️ **We will "dispute" all the issues that were already surfaced in the [previous audit](https://code4rena.com/reports/2022-02-nested)**.
+
+## New version
+
+**TODO**
+
+## Known issues/topics
+
+### Copy my portfolio (fees trick)
+
+A user can copy his own portfolio to reduce the fees, however a require statement won't fix this issue...
+
+This problem cannot be corrected but only mitigated, since the user can use two different wallets.
+Currently the front-end doesn't allow to duplicate a portfolio with the same address.
+
+### Deflationary/Rebase Tokens
+
+The protocol is no fully compatible with deflationary/rebase tokens. In fact, you can add a deflationary/rebase token to your portfolio but it can lead to unpredictable behaviors (positive or negative).
+
+We have chosen to manage the tokens with a fixed amount (the input) after considering several solutions.
+
+**So, how can we mitigate that ?**
+
+We're maintaining a list of all rebase tokens (source coingecko, which is well maintained) and prevent users from adding them to their portfolio on the platform.
+
+**TODO** extend to exotic tokens
+
+### Low Decimals
+
+**TODO**
+
+## Coverage
+
+`npx hardhat coverage`
+
+**TODO** screenshots
+
+## Links
+
+- **Website** : https://nested.fi
+- **Documentation** : https://docs.nested.fi/
+- **Medium** : https://medium.com/@nestedfi
+- **Github** : https://github.com/NestedFi
+- **Twitter** : https://twitter.com/NestedFi
+- **Telegram** : https://t.me/NestedFinanceChannel
+- **Discord** : https://discord.gg/VW8ZZsACzd
+
+## Contact us 📝
+
+Wardens! If you have any questions, please contact us!
+
+#### Axxe (Smart contract engineer)
+- **Telegram** : @axxedev
+- **Discord** : axxe#8561
+- **Schedule a call** : [Calendly](https://calendly.com/maxime-brugel/lets-talk)
+
+#### Adrien (CTO)
+
+- **Telegram** : @adrienspt
+- **Discord** : Adrien | Nested Finance#6564
+- **Schedule a call** : [Calendly](https://calendly.com/adrien-supizet/30min)
+
+## Try the application
+
+If you want to try Nested, go to : https://app.nested.fi/.
+
+It can help to better understand the protocol context.
+
+***
+
 # Introduction
 
 Nested is a decentralized protocol providing customizable financial products in the form of NFTs.
@@ -237,6 +328,7 @@ On the other hand, the "Operational Multisig" can schedule/execute transactions 
 - Insert a dummy mnemonic and a mainnet api key in the .env
 - [Configure forks](#testing) in .env
 
+**TODO** More details, how to run fork tests ?
 
 ## Commands
 
