@@ -14,7 +14,7 @@
 
 ## Scope
 
-All the Solidity files are included in the audit scope, **expect the ones in the `contracts/mocks` folder**.
+**TODO**
 
 ## Previous Audits
 
