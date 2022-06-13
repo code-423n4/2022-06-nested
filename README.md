@@ -36,7 +36,7 @@
 |/operators/Yearn/YearnVaultStorage                         | [YearnVaultStorage.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Yearn/YearnVaultStorage.sol)                              |  24 |
 |/operators/StakeDAO/StakeDaoCurveStrategyOperator          | [StakeDaoCurveStrategyOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/StakeDAO/StakeDaoCurveStrategyOperator.sol)   | 230 |
 |/operators/StakeDAO/StakeDaoStrategyStorage                | [StakeDaoStrategyStorage.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/StakeDAO/StakeDaoStrategyStorage.sol)               |  25 |
-|/libraries/CurveHelpers                                    | [CurveHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/CurveHelpers.sol)                                              | 105 |
+|/libraries/CurveHelpers                                    | [CurveHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/CurveHelpers/CurveHelpers.sol)                                              | 105 |
 
 ### Governance scope
 | Contract name                                   |                                                                    Github URL                                                                  | LoC |
