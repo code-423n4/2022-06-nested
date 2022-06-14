@@ -165,7 +165,7 @@ Currently the front-end doesn’t allow to duplicate a portfolio with the same a
 ### Deflationary, Rebase and exotic Tokens
 
 The protocol is not fully compatible with deflationary/rebase tokens. In fact, you can add a deflationary/rebase token to your portfolio but
-it can lead to unpredictable behaviors (positive or negative).
+it can lead to unpredictable behaviors (positive or negative, e.g [weird-erc20](https://github.com/d-xo/weird-erc20)).
 We have chosen to manage the tokens with a fixed amount (the input) after considering several solutions.
 
 There are also tokens that have exotic implementations that will not handle to avoid unpredictable behaviors, or bypass protocol operations.
@@ -197,7 +197,7 @@ We can encounter tokens with different decimals and sometimes 0 decimals. This i
 | An array’s length should be cached in for-loops                                                                                     | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/28) |                                                                                           When the array will no be large |
 | Consider introducing an upper limit for `_timestamp` in updateLockTimestamp                                                         | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/66) |                                                                               We are not sure about an upper limit to set |
 | There is no limit on how many operator that can be added                                                                            | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/58) |                                                                                                                           |
-| Remove unused `ETH` variable from `FeeSplitter`                                                                                     | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/46) | We don't know if we will remove this variable,It can be very useful to migrate funds (if needed, not used for the moment) |
+| Remove unused `ETH` variable from `FeeSplitter`                                                                                     | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/46) | We don't know if we will remove this variable. It can be very useful to migrate funds (if needed, not used for the moment) |
 | Functions that add or remove `operators` or `shareholders` iterate over a whole array, consider using `EnumerableSet` to store them | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/67) |                                                                                                                           |
 | Function `withdraw` in `NestedFactory` calls `nestedRecords` twice                                                                  | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/67) |                                                                                                                           |
 
