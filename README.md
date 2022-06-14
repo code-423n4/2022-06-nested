@@ -100,7 +100,7 @@ This new version includes the corrections of the previous audits and new feature
     - NestedFactory does not track operators properly [code-423n4/2022-02-nested-findings#38](https://github.com/code-423n4/2022-02-nested-findings/issues/38) ([1a16a51](https://github.com/NestedFi/nested-core-lego/commit/1a16a5104bdd3cc4fed320deba9d1d6ab6d630c2))
     - NestedFactory: User can utilise accidentally sent ETH funds via processOutputOrders() / processInputAndOutputOrders() [code-423n4/2022-02-nested-findings#44](https://github.com/code-423n4/2022-02-nested-findings/issues/44) ([ac472b4](https://github.com/NestedFi/nested-core-lego/commit/ac472b425cda9e53a130ecd0149657bdc3ce2481))
 
-### Ownership architecture
+### Ownership architecture [(see more)](#ownership--governance)
 
 _**Pull request:**_ [feat: OwnerProxy #116](https://github.com/NestedFi/nested-core-lego/pull/116)
 In order to complete the ownership architecture, we need the OwnerProxy contract in charge of executing scripts for the Timelock (run transactions atomically).
@@ -134,7 +134,7 @@ This operatorcan be deployed on every chains where [Yearn](https://yearn.finance
 > **NOTE**: This operator is almost identical to the **StakeDAO operator**, so we have only included the Yearn operator in the audit scope and not the StakeDAO one.
 > We factorized the code of these two operators in the libraries `StakingLPVaultHelpers.sol` and `CurveHelpers.sol`.
 
-### Entry/exit fees managment
+### Entry/exit fees management
 
 _**Pull request:**_ [feat: Upgradeable Fees #113](https://github.com/NestedFi/nested-core-lego/pull/113)
 We had introduced upgradeability of fees and the notion of "EntryFees/ExitFees" (new values) :
