@@ -105,40 +105,40 @@ This new version includes the corrections of the previous audits and new feature
 ### Ownership architecture [(see more)](#ownership--governance)
 
 _**Pull request:**_ [feat: OwnerProxy #116](https://github.com/NestedFi/nested-core-lego/pull/116)
-In order to complete the ownership architecture, we needed an OwnerProxy contract in charge of executing scripts for the Timelock (run transactions atomically).
+In order to complete the ownership architecture, we need the OwnerProxy contract in charge of executing scripts for the Timelock (run transactions atomically).
 
 ### Operators
 
 #### Beefy Single asset vault
 
-_**Pull request:**_ [[New Operator] - Beefy Single Asset Vault #107](https://github.com/NestedFi/nested-core-lego/pull/107)
-New operator to deposit/withdraw in [**Beefy single asset vaults**](https://app.beefy.finance/)
-This operator can be deployed on every chains where [Beefy](https://app.beefy.finance) is available.
+_**Pull request:**_ [[New Operator] - Beefy Single Asset Vault #107](https://github.com/NestedFi/nested-core-lego/pull/107).
+New operator to deposit/withdraw in [**Beefy single asset vaults**](https://app.beefy.finance/).<br/>
+_This operator can be deployed on every chains where Beefy is available._
 
 #### Beefy LP vault
 
-_**Pull request:**_ [[New Operator] - Beefy LP Vault #114](https://github.com/NestedFi/nested-core-lego/pull/114)
-New operator to deposit/withdraw in [**Beefy LP asset vaults**](https://app.beefy.finance/)
-This operator can be deployed on every chains where [Beefy](https://app.beefy.finance) is available.
+_**Pull request:**_ [[New Operator] - Beefy LP Vault #114](https://github.com/NestedFi/nested-core-lego/pull/114).
+New operator to deposit/withdraw in [**Beefy LP asset vaults**](https://app.beefy.finance/).<br/>
+_This operator can be deployed on every chains where Beefy is available._
 
 #### Paraswap
 
-_**Pull request:**_ [[New Operator] - Paraswap #109](https://github.com/NestedFi/nested-core-lego/pull/109)
-New operator to swap tokens in [Paraswap](https://app.paraswap.io/)
-This operator can be deployed on every chains where [Paraswap](https://app.paraswap.io/) is available.
+_**Pull request:**_ [[New Operator] - Paraswap #109](https://github.com/NestedFi/nested-core-lego/pull/109).
+New operator to swap tokens in [Paraswap](https://app.paraswap.io/).<br/>
+_This operator can be deployed on every chains where [Paraswap](https://app.paraswap.io/) is available._
 
 #### Yearn Curve vaults
 
-_**Pull request:**_ [[New Operator] StakeDAO + Yearn (curve pools) #119](https://github.com/NestedFi/nested-core-lego/pull/119)
-New operator to deposit/withdraw in [Yearn](https://yearn.finance/#/vaults) vaults that use [Curve](https://curve.fi/) managed assets.
-This operator can be deployed on every chains where [Yearn](https://yearn.finance/#/vaults) has Curve vault available.
+_**Pull request:**_ [[New Operator] StakeDAO + Yearn (curve pools) #119](https://github.com/NestedFi/nested-core-lego/pull/119).
+New operator to deposit/withdraw in [Yearn](https://yearn.finance/#/vaults) vaults that use [Curve](https://curve.fi/) managed assets.<br/>
+_This operator can be deployed on every chains where [Yearn](https://yearn.finance/#/vaults) has Curve vault available._
 
 > **NOTE**: This operator is almost identical to the **StakeDAO operator**, so we have only included the Yearn operator in the audit scope and not the StakeDAO one.
-> We factorized the code of these two operators in the libraries [`StakingLPVaultHelpers.sol`](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/StakingLPVaultHelpers.sol) and [`CurveHelpers.sol`](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/CurveHelpers/CurveHelpers.sol).
+> We factorized the code of these two operators in the libraries `StakingLPVaultHelpers.sol` and `CurveHelpers.sol`.
 
 ### Entry/exit fees management
 
-_**Pull request:**_ [feat: Upgradeable Fees #113](https://github.com/NestedFi/nested-core-lego/pull/113)
+_**Pull request:**_ [feat: Upgradeable Fees #113](https://github.com/NestedFi/nested-core-lego/pull/113).
 We had introduced upgradeability of fees and the notion of "EntryFees/ExitFees" (new values) :
 
 -   `EntryFees` : Applied when funds stay inside of the portfolio.
@@ -180,11 +180,12 @@ We can encounter tokens with different decimals and sometimes 0 decimals. This i
 
 ### Miscellaneous already surfaced
 
-| Issue                                                                                         | Github URL                                                               |                                                     Comment |
-| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------: |
-| `TransferOwnership` should be a two step process                                              | [link](https://github.com/code-423n4/2021-11-nested-findings/issues/101) |                                                             |
-| Accidentally calling `withdraw` twice with the same parameters could withdraw multiple assets | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/33)  | It is a front end and not really related to smart contract. |
-| Unbounded number of shareholders can cause DOS                                                | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/2)   |                                                             |
+| Issue                                                                                         | Github URL                                                               |                                                                                                    Comment |
+| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------: |
+| `TransferOwnership` should be a two step process                                              | [link](https://github.com/code-423n4/2021-11-nested-findings/issues/101) |                                                                                                            |
+| `NestedAsset`: `mintWithMetadata` and `backfillTokenURI` are not used                         | [link](https://github.com/code-423n4/2021-11-nested-findings/issues/179) | We assume that the next factory might use these functions. Therefore we want to keep this unused function. |
+| Accidentally calling `withdraw` twice with the same parameters could withdraw multiple assets | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/33)  |                                                It is a front end and not really related to smart contract. |
+| Unbounded number of shareholders can cause DOS                                                | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/2)   |                                                                                                            |
 
 ### Gas optimizations already surfaced
 
@@ -209,7 +210,7 @@ Run `npx hardhat coverage` to run test and generate the coverage summary.
 
 > To get the total coverage, it is necessary to run `npx hardhat coverage` with all the existing configurations, to reach all the written tests.
 
-> You can find the 3 existing configrations (BSC, ETH and without fork) in [.env.exemple](https://github.com/NestedFi/nested-core-lego/blob/master/.env.example) file.
+> You can find the 3 existing configurations (BSC, ETH and without fork) in [.env.exemple](https://github.com/NestedFi/nested-core-lego/blob/master/.env.example) file.
 
 ### Coverage ran without fork
 
