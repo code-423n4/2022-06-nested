@@ -210,7 +210,7 @@ Run `npx hardhat coverage` to run test and generate the coverage summary.
 
 > To get the total coverage, it is necessary to run `npx hardhat coverage` with all the existing configurations, to reach all the written tests.
 
-> You can find the 3 existing configurations (BSC, ETH and without fork) in [.env.exemple](https://github.com/NestedFi/nested-core-lego/blob/master/.env.example) file.
+> You can find the 3 existing configurations (BSC, ETH and without fork) in [.env.example](https://github.com/NestedFi/nested-core-lego/blob/master/.env.example) file.
 
 ### Coverage ran without fork
 
