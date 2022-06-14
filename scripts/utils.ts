@@ -4,7 +4,6 @@ import {
     NestedFactory,
     OperatorResolver,
     ParaswapOperator,
-    StakeDaoCurveStrategyOperator,
     ZeroExOperator,
 } from "../typechain";
 import { FactoryAndOperatorsFixture, FactoryAndOperatorsForkingBSCFixture, FactoryAndOperatorsForkingETHFixture } from "../test/shared/fixtures";
@@ -208,46 +207,6 @@ export function registerBeefyWithdraw(operator: BeefyVaultOperator): Op {
     };
 }
 
-export function registerStakeDaoDepositETH(operator: StakeDaoCurveStrategyOperator): Op {
-    return {
-        name: "stakeDaoCurveStrategyDepositETH",
-        contract: operator.address,
-        signature: "function depositETH(address strategy, uint256 amount, uint256 minAmountOut)"
-    };
-}
-
-export function registerStakeDaoDeposit(operator: StakeDaoCurveStrategyOperator): Op {
-    return {
-        name: "stakeDaoCurveStrategyDeposit",
-        contract: operator.address,
-        signature: "function deposit(address strategy, address tokenIn, uint256 amount, uint256 minAmountOut)"
-    };
-}
-
-export function registerStakeDaoWithdrawETH(operator: StakeDaoCurveStrategyOperator): Op {
-    return {
-        name: "stakeDaoCurveStrategyWithdrawETH",
-        contract: operator.address,
-        signature: "function withdrawETH(address strategy, uint256 amount, uint256 minAmountOut)"
-    };
-}
-
-export function registerStakeDaoWithdraw128(operator: StakeDaoCurveStrategyOperator): Op {
-    return {
-        name: "stakeDaoCurveStrategyWithdraw128",
-        contract: operator.address,
-        signature: "function withdraw128(address strategy, uint256 amount, address outputToken, uint256 minAmountOut)"
-    };
-}
-
-export function registerStakeDaoWithdraw256(operator: StakeDaoCurveStrategyOperator): Op {
-    return {
-        name: "stakeDaoCurveStrategyWithdraw256",
-        contract: operator.address,
-        signature: "function withdraw256(address strategy, uint256 amount, address outputToken, uint256 minAmountOut)"
-    }
-}
-
 export function registerBeefyZapBiswapLPDeposit(operator: BeefyZapBiswapLPVaultOperator): Op {
     return {
         name: "BeefyZapBiswapLPDeposit",
@@ -425,70 +384,6 @@ export function getYearnCurveWithdrawETHOrder(context: FactoryAndOperatorsForkin
             ["address", yearnVaultAddress],
             ["uint256", amountToWithdraw],
             ["uint256", minAmountOut ? minAmountOut : 0], // 100% slippage
-        ]),
-    ];
-}
-
-
-
-// Create an ETH Deposit order in StakeDAO
-export function getStakeDaoDepositETHOrder(context: FactoryAndOperatorsForkingETHFixture, strategyAddress: string, amountToDeposit: BigNumber, minStrategyToken?: BigNumber) {
-    return [
-        buildOrderStruct(context.stakeDaoCurveStrategyDepositETHOperatorNameBytes32, strategyAddress, [
-            ["address", strategyAddress],
-            ["uint256", amountToDeposit],
-            ["uint256", minStrategyToken ? minStrategyToken : 0], // 100% slippage if minAmountOut is null
-        ]),
-    ];
-}
-
-
-// Create a non-ETH Deposit order in StakeDAO
-export function getStakeDaoDepositOrder(context: FactoryAndOperatorsForkingBSCFixture, strategyAddress: string, tokenToDeposit: string, amountToDeposit: BigNumber, minStrategyToken?: BigNumber) {
-    return [
-        buildOrderStruct(context.stakeDaoCurveStrategyDepositOperatorNameBytes32, strategyAddress, [
-            ["address", strategyAddress],
-            ["address", tokenToDeposit],
-            ["uint256", amountToDeposit],
-            ["uint256", minStrategyToken ? minStrategyToken : 0], // 100% slippage if minAmountOut is null
-        ]),
-    ];
-}
-
-
-// Create a WithdrawETH order in StakeDAO
-export function getStakeDaoWithdrawETHOrder(context: FactoryAndOperatorsForkingETHFixture, strategyAddress: string, amountToWithdraw: BigNumber, minAmountOut?: BigNumber) {
-    return [
-        buildOrderStruct(context.stakeDaoCurveStrategyWithdrawETHOperatorNameBytes32, strategyAddress, [
-            ["address", strategyAddress],
-            ["uint256", amountToWithdraw],
-            ["uint256", minAmountOut ? minAmountOut : 0], // 100% slippage if minAmountOut is null
-        ]),
-    ];
-}
-
-
-// Create a Withdraw128 order in StakeDAO
-export function getStakeDaoWithdraw128Order(context: FactoryAndOperatorsForkingBSCFixture, strategyAddress: string, amountToWithdraw: BigNumber, outputToken: string, minAmountOut?: BigNumber) {
-    return [
-        buildOrderStruct(context.stakeDaoCurveStrategyWithdraw128OperatorNameBytes32, strategyAddress, [
-            ["address", strategyAddress],
-            ["uint256", amountToWithdraw],
-            ["address", outputToken],
-            ["uint256", minAmountOut ? minAmountOut : 0], // 100% slippage if minAmountOut is null
-        ]),
-    ];
-}
-
-
-// Create a Withdraw256 order in StakeDAO
-export function getStakeDaoWithdraw256Order(context: FactoryAndOperatorsForkingBSCFixture, strategyAddress: string, amountToWithdraw: BigNumber, outputToken: string, minAmountOut?: BigNumber) {
-    return [
-        buildOrderStruct(context.stakeDaoCurveStrategyWithdraw256OperatorNameBytes32, strategyAddress, [
-            ["address", strategyAddress],
-            ["uint256", amountToWithdraw],
-            ["address", outputToken],
-            ["uint256", minAmountOut ? minAmountOut : 0], // 100% slippage if minAmountOut is null
         ]),
     ];
 }

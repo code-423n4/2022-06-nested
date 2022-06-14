@@ -19,8 +19,6 @@ import {
     NestedReserve,
     OperatorResolver,
     ParaswapOperator,
-    StakeDaoCurveStrategyOperator,
-    StakeDaoStrategyStorage,
     TestableOperatorCaller,
     WETH9,
     Withdrawer,
@@ -48,11 +46,6 @@ import {
     registerYearnDepositETH,
     registerYearnWithdrawETH,
     setMaxAllowance,
-    registerStakeDaoDeposit,
-    registerStakeDaoDepositETH,
-    registerStakeDaoWithdrawETH,
-    registerStakeDaoWithdraw128,
-    registerStakeDaoWithdraw256,
 } from "../../scripts/utils";
 
 import { BeefyZapBiswapLPVaultOperator } from "../../typechain/BeefyZapBiswapLPVaultOperator";
@@ -448,15 +441,6 @@ export type FactoryAndOperatorsForkingBSCFixture = {
     beefyVaultStorage: BeefyVaultStorage;
     beefyVaultDepositOperatorNameBytes32: string;
     beefyVaultWithdrawOperatorNameBytes32: string;
-    stakeDaoUsdStrategyAddress: string;
-    stakeDaoNonWhitelistedStrategy: string;
-    stakeDaoCurveStrategyOperator: StakeDaoCurveStrategyOperator;
-    stakeDaoStrategyStorage: StakeDaoStrategyStorage;
-    stakeDaoCurveStrategyDepositOperatorNameBytes32: string;
-    stakeDaoCurveStrategyDepositETHOperatorNameBytes32: string;
-    stakeDaoCurveStrategyWithdrawETHOperatorNameBytes32: string;
-    stakeDaoCurveStrategyWithdraw128OperatorNameBytes32: string;
-    stakeDaoCurveStrategyWithdraw256OperatorNameBytes32: string;
     beefyBiswapVaultAddress: string;
     beefyUnregisteredBiswapVaultAddress: string;
     beefyBiswapBtcEthLPVaultAddress: string;
@@ -555,30 +539,6 @@ export const factoryAndOperatorsForkingBSCFixture: Fixture<FactoryAndOperatorsFo
     // Deploy Beefy vault storage
     const beefyVaultStorageFactory = await ethers.getContractFactory("BeefyVaultStorage");
     const beefyVaultStorage = beefyVaultStorageFactory.attach(await beefyVaultOperator.operatorStorage());
-
-    // Deploy StakeDAO operator storage (USD Strategy 3pool)
-    const stakeDaoUsdStrategyAddress = "0x4835BC54e87ff7722a89450dc26D9dc2d3A69F36";
-    const usd3poolAddress = "0x160CAed03795365F3A589f10C379FfA7d75d4E76";
-    const usd3poolLpTokenAddress = "0xaF4dE8E872131AE328Ce21D909C74705d3Aaf452";
-    const stakeDaoCurveStrategyOperatorFactory = await ethers.getContractFactory("StakeDaoCurveStrategyOperator");
-    const stakeDaoCurveStrategyOperator = await stakeDaoCurveStrategyOperatorFactory
-        .connect(masterDeployer)
-        .deploy(
-            [stakeDaoUsdStrategyAddress],
-            [{
-                poolAddress: usd3poolAddress,
-                poolCoinAmount: 3,
-                lpToken: usd3poolLpTokenAddress
-            }],
-            withdrawer.address,
-            BNB,
-            WBNB.address
-        );
-    await stakeDaoCurveStrategyOperator.deployed();
-
-    const stakeDaoStrategyStorageFactory = await ethers.getContractFactory("StakeDaoStrategyStorage");
-    const stakeDaoStrategyStorage = stakeDaoStrategyStorageFactory.attach(await stakeDaoCurveStrategyOperator.operatorStorage());
-
 
     // Deploy Beefy Zap Biswap LP vault operator (USDT-BNB and BTCB-ETH LP vaults)
     const biswapRouterAddress = "0x3a6d8cA21D1CF76F653A67577FA0D27453350dD8";
@@ -680,11 +640,6 @@ export const factoryAndOperatorsForkingBSCFixture: Fixture<FactoryAndOperatorsFo
             registerFlat(flatOperator),
             registerBeefyDeposit(beefyVaultOperator),
             registerBeefyWithdraw(beefyVaultOperator),
-            registerStakeDaoDepositETH(stakeDaoCurveStrategyOperator),
-            registerStakeDaoDeposit(stakeDaoCurveStrategyOperator),
-            registerStakeDaoWithdrawETH(stakeDaoCurveStrategyOperator),
-            registerStakeDaoWithdraw128(stakeDaoCurveStrategyOperator),
-            registerStakeDaoWithdraw256(stakeDaoCurveStrategyOperator),
             registerBeefyZapBiswapLPDeposit(beefyZapBiswapLPVaultOperator),
             registerBeefyZapBiswapLPWithdraw(beefyZapBiswapLPVaultOperator),
             registerBeefyZapUniswapLPDeposit(beefyZapUniswapLPVaultOperator),
@@ -732,15 +687,6 @@ export const factoryAndOperatorsForkingBSCFixture: Fixture<FactoryAndOperatorsFo
         beefyVaultStorage,
         beefyVaultDepositOperatorNameBytes32: toBytes32("BeefyDeposit"),
         beefyVaultWithdrawOperatorNameBytes32: toBytes32("BeefyWithdraw"),
-        stakeDaoUsdStrategyAddress,
-        stakeDaoNonWhitelistedStrategy: "0xf479e1252481360f67c2b308F998395cA056a77f",
-        stakeDaoCurveStrategyOperator,
-        stakeDaoStrategyStorage,
-        stakeDaoCurveStrategyDepositOperatorNameBytes32: toBytes32("stakeDaoCurveStrategyDeposit"),
-        stakeDaoCurveStrategyDepositETHOperatorNameBytes32: toBytes32("stakeDaoCurveStrategyDepositETH"),
-        stakeDaoCurveStrategyWithdrawETHOperatorNameBytes32: toBytes32("stakeDaoCurveStrategyWithdrawETH"),
-        stakeDaoCurveStrategyWithdraw128OperatorNameBytes32: toBytes32("stakeDaoCurveStrategyWithdraw128"),
-        stakeDaoCurveStrategyWithdraw256OperatorNameBytes32: toBytes32("stakeDaoCurveStrategyWithdraw256"),
         beefyBiswapVaultAddress,
         beefyUnregisteredBiswapVaultAddress: "0xd4548D0b71D4f925aaA2be59E10c6B9248d1EF70",
         beefyBiswapBtcEthLPVaultAddress,
@@ -775,15 +721,6 @@ export type FactoryAndOperatorsForkingETHFixture = {
     nestedRecords: NestedRecords;
     maxHoldingsCount: BigNumber;
     operatorResolver: OperatorResolver;
-    stakeDaoStEthStrategyAddress: string;
-    stakeDaoNonWhitelistedStrategy: string;
-    stakeDaoCurveStrategyOperator: StakeDaoCurveStrategyOperator;
-    stakeDaoStrategyStorage: StakeDaoStrategyStorage;
-    stakeDaoCurveStrategyDepositOperatorNameBytes32: string;
-    stakeDaoCurveStrategyDepositETHOperatorNameBytes32: string;
-    stakeDaoCurveStrategyWithdrawETHOperatorNameBytes32: string;
-    stakeDaoCurveStrategyWithdraw128OperatorNameBytes32: string;
-    stakeDaoCurveStrategyWithdraw256OperatorNameBytes32: string;
     yearnCurveVaultOperator: YearnCurveVaultOperator;
     yearnVaultStorage: YearnVaultStorage;
     yearnVaultDepositOperatorNameBytes32: string;
@@ -858,29 +795,6 @@ export const factoryAndOperatorsForkingETHFixture: Fixture<FactoryAndOperatorsFo
     const withdrawerFactory = await ethers.getContractFactory("Withdrawer");
     const withdrawer = await withdrawerFactory.connect(masterDeployer).deploy(WETH.address);
     await withdrawer.deployed();
-
-    // Deploy StakeDAO operator storage (USD Strategy 3pool)
-    const stakeDaoStEthStrategyAddress = "0xbC10c4F7B9FE0B305e8639B04c536633A3dB7065";
-    const stEthPoolAddress = "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022";
-    const stEthPoolLpTokenAddress = "0x06325440D014e39736583c165C2963BA99fAf14E";
-    const stakeDaoCurveStrategyOperatorFactory = await ethers.getContractFactory("StakeDaoCurveStrategyOperator");
-    const stakeDaoCurveStrategyOperator = await stakeDaoCurveStrategyOperatorFactory
-        .connect(masterDeployer)
-        .deploy(
-            [stakeDaoStEthStrategyAddress],
-            [{
-                poolAddress: stEthPoolAddress,
-                poolCoinAmount: 2,
-                lpToken: stEthPoolLpTokenAddress
-            }],
-            withdrawer.address,
-            ETH,
-            WETH.address
-        );
-    await stakeDaoCurveStrategyOperator.deployed();
-
-    const stakeDaoStrategyStorageFactory = await ethers.getContractFactory("StakeDaoStrategyStorage");
-    const stakeDaoStrategyStorage = stakeDaoStrategyStorageFactory.attach(await stakeDaoCurveStrategyOperator.operatorStorage());
 
     // Deploy Yearn Curve operator (Curve 3crypto, Curve alETH and Curve 3EUR)
     const triCryptoVault = "0xE537B5cc158EB71037D4125BDD7538421981E6AA";
@@ -1007,11 +921,6 @@ export const factoryAndOperatorsForkingETHFixture: Fixture<FactoryAndOperatorsFo
     await importOperatorsWithSigner(
         operatorResolver,
         [
-            registerStakeDaoDeposit(stakeDaoCurveStrategyOperator),
-            registerStakeDaoDepositETH(stakeDaoCurveStrategyOperator),
-            registerStakeDaoWithdraw128(stakeDaoCurveStrategyOperator),
-            registerStakeDaoWithdraw256(stakeDaoCurveStrategyOperator),
-            registerStakeDaoWithdrawETH(stakeDaoCurveStrategyOperator),
             registerYearnDeposit(yearnCurveVaultOperator),
             registerYearnDepositETH(yearnCurveVaultOperator),
             registerYearnWithdraw128(yearnCurveVaultOperator),
@@ -1053,15 +962,6 @@ export const factoryAndOperatorsForkingETHFixture: Fixture<FactoryAndOperatorsFo
         nestedRecords,
         maxHoldingsCount,
         operatorResolver,
-        stakeDaoStEthStrategyAddress,
-        stakeDaoNonWhitelistedStrategy: "0xa2761B0539374EB7AF2155f76eb09864af075250",
-        stakeDaoCurveStrategyOperator,
-        stakeDaoStrategyStorage,
-        stakeDaoCurveStrategyDepositOperatorNameBytes32: toBytes32("stakeDaoCurveStrategyDeposit"),
-        stakeDaoCurveStrategyDepositETHOperatorNameBytes32: toBytes32("stakeDaoCurveStrategyDepositETH"),
-        stakeDaoCurveStrategyWithdrawETHOperatorNameBytes32: toBytes32("stakeDaoCurveStrategyWithdrawETH"),
-        stakeDaoCurveStrategyWithdraw128OperatorNameBytes32: toBytes32("stakeDaoCurveStrategyWithdraw128"),
-        stakeDaoCurveStrategyWithdraw256OperatorNameBytes32: toBytes32("stakeDaoCurveStrategyWithdraw256"),
         yearnCurveVaultOperator,
         yearnVaultStorage,
         yearnVaultDepositOperatorNameBytes32: toBytes32("YearnVaultDepositOperator"),

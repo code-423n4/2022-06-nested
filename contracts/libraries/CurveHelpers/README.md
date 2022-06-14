@@ -1,6 +1,6 @@
 # Curve pools
 
-Due to the number of Curve pool types, we had to choose which ones to support in the YearnCurveVaultOperator and StakeDaoCurveStrategyOperator.
+Due to the number of Curve pool types, we had to choose which ones to support in the YearnCurveVaultOperator and StakeDaoCurveStrategyOperator (removed from scope).
 
 There is 12 Curve pool types:
 
@@ -29,7 +29,7 @@ remove_liquidity_one_coin(uint256,int128,uint256)
 remove_liquidity_one_coin(uint256,uint256,uint256)
 ```
 
-These differences are the consequence of the presence of functions `withdraw128()` and `withdraw256()` in the StakeDAO and Yearn operators.
+These differences are the consequence of the presence of functions `withdraw128()` and `withdraw256()` in the StakeDAO (removed from scope)à and Yearn operators.
 
 ### ETH handling
 
