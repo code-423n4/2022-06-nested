@@ -4,13 +4,14 @@
 <div align="center"><a href="https://nested.fi" > https://nested.fi </a></div>
 
 # Nested contest details
-- $33,250 USDC main award pot
-- $1,750 USDC gas optimization award pot
-- Join [C4 Discord](https://discord.gg/code4rena) to register
-- Submit findings [using the C4 form](https://code4rena.com/contests/2022-06-nested-contest/submit)
-- [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
-- Starts June 15, 2022 20:00 UTC
-- Ends June 18, 2022 19:59 UTC
+
+-   $33,250 USDC main award pot
+-   $1,750 USDC gas optimization award pot
+-   Join [C4 Discord](https://discord.gg/code4rena) to register
+-   Submit findings [using the C4 form](https://code4rena.com/contests/2022-06-nested-contest/submit)
+-   [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
+-   Starts June 15, 2022 20:00 UTC
+-   Ends June 18, 2022 19:59 UTC
 
 ## Scope 
 
@@ -19,45 +20,50 @@
 > In this README you can find references to smart contracts that **are not part of the scope** (_StakeDAO operator_ for exemple), these contracts are mentioned because it is important to understand them to have a better view of how the protocol works in general.
 
 ### Core scope
-| Contract name                                             |                                                      Github URL                                                                    | LoC |
-|-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|----:|
-| NestedFactory                                             | [NestedFactory.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/NestedFactory.sol)                            | 452 |
-| OperatorResolver                                          | [OperatorResolver.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/OperatorResolver.sol)                      | 59  |
-| Withdrawer                                                | [Withdrawer.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/Withdrawer.sol)                                  | 18  |
-| /abstracts/MixinOperatorResolver                          | [MixinOperatorResolver.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/abstracts/MixinOperatorResolver.sol)  | 68  |
-| /abstracts/OwnableProxyDelegation                         | [OwnableProxyDelegation.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/abstracts/OwnableProxyDelegation.sol)| 35  |
-| /libraries/ExchangeHelpers                                | [ExchangeHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/ExchangeHelpers.sol)              | 21  |
+
+| Contract name                     | Github URL                                                                                                                          | LoC |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | --: |
+| NestedFactory                     | [NestedFactory.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/NestedFactory.sol)                             | 452 |
+| OperatorResolver                  | [OperatorResolver.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/OperatorResolver.sol)                       |  59 |
+| Withdrawer                        | [Withdrawer.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/Withdrawer.sol)                                   |  18 |
+| /abstracts/MixinOperatorResolver  | [MixinOperatorResolver.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/abstracts/MixinOperatorResolver.sol)   |  68 |
+| /abstracts/OwnableProxyDelegation | [OwnableProxyDelegation.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/abstracts/OwnableProxyDelegation.sol) |  35 |
+| /libraries/ExchangeHelpers        | [ExchangeHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/ExchangeHelpers.sol)               |  21 |
 
 ### Operator scope
-| Contract name                                             |                                                                    Github URL                                                                                | LoC |
-|-----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|----:|
-|/operators/Beefy/BeefyVaultOperator                        | [BeefyVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/BeefyVaultOperator.sol)                            |  62 |
-|/operators/Beefy/BeefyVaultStorage                         | [BeefyVaultStorage.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/BeefyVaultStorage.sol)                              |  20 |
-|/operators/Beefy/lp/BeefyZapBiswapLPVaultOperator          | [BeefyZapBiswapLPVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/lp/BeefyZapBiswapLPVaultOperator.sol)   | 167 |
-|/operators/Beefy/lp/BeefyZapUniswapLPVaultOperator         | [BeefyZapUniswapLPVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/lp/BeefyZapUniswapLPVaultOperator.sol) | 166 |
-|/operators/Paraswap/ParaswapOperator                       | [ParaswapOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Paraswap/ParaswapOperator.sol)                             |  35 |
-|/operators/Yearn/YearnCurveVaultOperator                   | [YearnCurveVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Yearn/YearnCurveVaultOperator.sol)                  | 222 |
-|/operators/Yearn/YearnVaultStorage                         | [YearnVaultStorage.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Yearn/YearnVaultStorage.sol)                              |  24 |
-|/libraries/CurveHelpers                                    | [CurveHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/CurveHelpers/CurveHelpers.sol)                                 | 105 |
+
+| Contract name                                      | Github URL                                                                                                                                                   | LoC |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --: |
+| /operators/Beefy/BeefyVaultOperator                | [BeefyVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/BeefyVaultOperator.sol)                            |  62 |
+| /operators/Beefy/BeefyVaultStorage                 | [BeefyVaultStorage.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/BeefyVaultStorage.sol)                              |  20 |
+| /operators/Beefy/lp/BeefyZapBiswapLPVaultOperator  | [BeefyZapBiswapLPVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/lp/BeefyZapBiswapLPVaultOperator.sol)   | 167 |
+| /operators/Beefy/lp/BeefyZapUniswapLPVaultOperator | [BeefyZapUniswapLPVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/lp/BeefyZapUniswapLPVaultOperator.sol) | 166 |
+| /operators/Paraswap/ParaswapOperator               | [ParaswapOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Paraswap/ParaswapOperator.sol)                             |  35 |
+| /operators/Yearn/YearnCurveVaultOperator           | [YearnCurveVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Yearn/YearnCurveVaultOperator.sol)                  | 222 |
+| /operators/Yearn/YearnVaultStorage                 | [YearnVaultStorage.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Yearn/YearnVaultStorage.sol)                              |  24 |
+| /libraries/CurveHelpers                            | [CurveHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/CurveHelpers/CurveHelpers.sol)                                 | 105 |
 
 ### Governance scope
-| Contract name                                   |                                                                    Github URL                                                                  | LoC |
-|-------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|----:|
-|/governance/OwnerProxy                           | [OwnerProxy.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/governance/OwnerProxy.sol)                                   | 19  |
-|/governance/TimelockControllerEmergency          | [TimelockControllerEmergency.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/governance/TimelockControllerEmergency.sol) | 186 |
-|/governance/scripts/OperatorScripts              | [OperatorScripts.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/governance/scripts/OperatorScripts.sol)                 | 71  |
- 
+
+| Contract name                           | Github URL                                                                                                                                     | LoC |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | --: |
+| /governance/OwnerProxy                  | [OwnerProxy.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/governance/OwnerProxy.sol)                                   |  19 |
+| /governance/TimelockControllerEmergency | [TimelockControllerEmergency.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/governance/TimelockControllerEmergency.sol) | 186 |
+| /governance/scripts/OperatorScripts     | [OperatorScripts.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/governance/scripts/OperatorScripts.sol)                 |  71 |
+
 ## Previous Audits
 
 The preview version has been audited 4 times (from oldest to newest):
-- [Peckshield Audit Report v1.0](audits/PeckShield-Audit-Report-Nested-v1.0.pdf)
-- [Red4Sec Audit Report v1.0](audits/Red4Sec_Nested_Finance_Security_Audit_Report_v3.pdf)
-- [CodeArena 2021-11](https://code4rena.com/reports/2021-11-nested)
-- [CodeArena 2022-02](https://code4rena.com/reports/2022-02-nested)
+
+-   [Peckshield Audit Report v1.0](audits/PeckShield-Audit-Report-Nested-v1.0.pdf)
+-   [Red4Sec Audit Report v1.0](audits/Red4Sec_Nested_Finance_Security_Audit_Report_v3.pdf)
+-   [CodeArena 2021-11](https://code4rena.com/reports/2021-11-nested)
+-   [CodeArena 2022-02](https://code4rena.com/reports/2022-02-nested)
 
 ⚠️ **All issues already surfaced in the [previous audit](https://code4rena.com/reports/2022-02-nested) will be "invalid"**.
 
 ## New version
+
 This new version includes the corrections of the previous audits and new features.
 
 ### Fixes from [last audit](https://github.com/code-423n4/2022-02-nested)
@@ -95,46 +101,56 @@ This new version includes the corrections of the previous audits and new feature
     - NestedFactory: User can utilise accidentally sent ETH funds via processOutputOrders() / processInputAndOutputOrders() [code-423n4/2022-02-nested-findings#44](https://github.com/code-423n4/2022-02-nested-findings/issues/44) ([ac472b4](https://github.com/NestedFi/nested-core-lego/commit/ac472b425cda9e53a130ecd0149657bdc3ce2481))
 
 ### Ownership architecture
+
 _**Pull request:**_ [feat: OwnerProxy #116](https://github.com/NestedFi/nested-core-lego/pull/116)
 In order to complete the ownership architecture, we need the OwnerProxy contract in charge of executing scripts for the Timelock (run transactions atomically).
 
 ### Operators
+
 #### Beefy Single asset vault
+
 _**Pull request:**_ [[New Operator] - Beefy Single Asset Vault #107](https://github.com/NestedFi/nested-core-lego/pull/107)
 New operator to deposit/withdraw in [**Beefy single asset vaults**](https://app.beefy.finance/)
 This operatorcan be deployed on every chains where Beefy is available.
 
 #### Beefy LP vault
+
 _**Pull request:**_ [[New Operator] - Beefy LP Vault #114](https://github.com/NestedFi/nested-core-lego/pull/114)
 New operator to deposit/withdraw in [**Beefy LP asset vaults**](https://app.beefy.finance/)
 This operatorcan be deployed on every chains where Beefy is available.
 
 #### Paraswap
+
 _**Pull request:**_ [[New Operator] - Paraswap #109](https://github.com/NestedFi/nested-core-lego/pull/109)
 New operator to swap tokens in [Paraswap](https://app.paraswap.io/)
 This operatorcan be deployed on every chains where [Paraswap](https://app.paraswap.io/) is available.
 
 #### Yearn Curve vaults
+
 _**Pull request:**_ [[New Operator] StakeDAO + Yearn (curve pools) #119](https://github.com/NestedFi/nested-core-lego/pull/119)
 New operator to deposit/withdraw in [Yearn](https://yearn.finance/#/vaults) vaults that use [Curve](https://curve.fi/) managed assets.
 This operatorcan be deployed on every chains where [Yearn](https://yearn.finance/#/vaults) has Curve vault available.
 
 > **NOTE**: This operator is almost identical to the **StakeDAO operator**, so we have only included the Yearn operator in the audit scope and not the StakeDAO one.
-We factorized the code of these two operators in the libraries `StakingLPVaultHelpers.sol` and `CurveHelpers.sol`.
+> We factorized the code of these two operators in the libraries `StakingLPVaultHelpers.sol` and `CurveHelpers.sol`.
 
 ### Entry/exit fees managment
+
 _**Pull request:**_ [feat: Upgradeable Fees #113](https://github.com/NestedFi/nested-core-lego/pull/113)
 We had introduced upgradeability of fees and the notion of "EntryFees/ExitFees" (new values) :
 
-- `EntryFees` : Applied when funds stay inside of the portfolio.
-- `ExitFees` : Applied when funds are withdrawed from the portfolio.
+-   `EntryFees` : Applied when funds stay inside of the portfolio.
+-   `ExitFees` : Applied when funds are withdrawed from the portfolio.
 
 ### Nested asset tokenURI mechanism
+
 _**Pull request:**_ [feat: Update tokenURI mechanism #103](https://github.com/NestedFi/nested-core-lego/pull/103)
 We updated the mechanism to set the tokenURI:
-- Remove mintWithMetadata and backfillTokenURI (with the _tokenURIs map).
-- Add reveal/unrevealed URI
-- Add contract URI
+
+-   Remove mintWithMetadata and backfillTokenURI (with the \_tokenURIs map).
+-   Add reveal/unrevealed URI
+-   Add contract URI
+
 ## Known issues/topics
 
 ### Copy my portfolio (fees trick)
@@ -193,73 +209,88 @@ For example, when computing fees, the amount in MPS, cannot be divided by 10,000
 ## Coverage
 
 Run `npx hardhat coverage` to run test and generate the coverage summary.
+
 > When you run `npx hardhat coverage`, test will be ran with the context you specified in the [.env configuration](https://github.com/NestedFi/nested-core-lego#testing).
-Only tests that can be run in the environment you have configured will be run to generate the coverage summary. 
+> Only tests that can be run in the environment you have configured will be run to generate the coverage summary.
 
->To get the total coverage, it is necessary to run `npx hardhat coverage` with all the existing configurations, to reach all the written tests.
+> To get the total coverage, it is necessary to run `npx hardhat coverage` with all the existing configurations, to reach all the written tests.
 
->You can find the 3 existing configrations (BSC, ETH and without fork) in [.env.exemple](https://github.com/NestedFi/nested-core-lego/blob/master/.env.example) file.
+> You can find the 3 existing configrations (BSC, ETH and without fork) in [.env.exemple](https://github.com/NestedFi/nested-core-lego/blob/master/.env.example) file.
 
 ### Coverage ran without fork
+
 #### Global coverage - tested without fork
+
 > The missing coverage is tested in the [BSC fork context](#coverage-ran-in-bsc-fork-context) or the [ETH fork context](#coverage-ran-in-eth-fork-context)
+
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/without-fork-1.png"></div>
 
 #### Main contracts - tested without fork
+
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/without-fork-2.png"></div>
 
-
 ### Coverage ran in ETH fork context
+
 #### Libraries - tested on ETH fork
+
 > The rest of the coverage is in the BSC fork coverage context under [Libraries - tested on BSC fork](#libraries---tested-on-bsc-fork).
+
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/eth-2.png"></div>
 
 #### CurveHelpers - tested on ETH fork
+
 > The rest of the coverage is in the BSC fork coverage context under [CurveHelpers - tested on BSC fork](#curvehelpers---tested-on-bsc-fork).
+
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/eth-3.png"></div>
 
 #### Yearn curve vault operator
+
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/eth-4.png"></div>
 
-
 ### Coverage ran in BSC fork context
+
 #### Libraries - tested on BSC fork
+
 > The rest of the coverage is in the ETH fork coverage context under [Libraries - tested on ETH fork](#libraries---tested-on-eth-fork).
+
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-2.png"></div>
 
 #### CurveHelpers - tested on BSC fork
+
 > The rest of the coverage is in the ETH fork coverage context under [CurveHelpers - tested on ETH fork](#curvehelpers---tested-on-eth-fork).
+
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-3.png"></div>
 
 #### Beefy operators
+
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-5.png"></div>
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-6.png"></div>
 
-
 ## Links
 
-- **Website** : https://nested.fi
-- **Documentation** : https://docs.nested.fi/
-- **Medium** : https://medium.com/@nestedfi
-- **Github** : https://github.com/NestedFi
-- **Twitter** : https://twitter.com/NestedFi
-- **Telegram** : https://t.me/NestedFinanceChannel
-- **Discord** : https://discord.gg/VW8ZZsACzd
+-   **Website** : https://nested.fi
+-   **Documentation** : https://docs.nested.fi/
+-   **Medium** : https://medium.com/@nestedfi
+-   **Github** : https://github.com/NestedFi
+-   **Twitter** : https://twitter.com/NestedFi
+-   **Telegram** : https://t.me/NestedFinanceChannel
+-   **Discord** : https://discord.gg/VW8ZZsACzd
 
 ## Contact us 📝
 
 Wardens! If you have any questions, please contact us!
 
 #### Axxe (Smart contract engineer)
-- **Telegram** : @axxedev
-- **Discord** : axxe#8561
-- **Schedule a call** : [Calendly](https://calendly.com/maxime-brugel/lets-talk)
+
+-   **Telegram** : @axxedev
+-   **Discord** : axxe#8561
+-   **Schedule a call** : [Calendly](https://calendly.com/maxime-brugel/lets-talk)
 
 #### Adrien (CTO)
 
-- **Telegram** : @adrienspt
-- **Discord** : Adrien | Nested Finance#6564
-- **Schedule a call** : [Calendly](https://calendly.com/adrien-supizet/30min)
+-   **Telegram** : @adrienspt
+-   **Discord** : Adrien | Nested Finance#6564
+-   **Schedule a call** : [Calendly](https://calendly.com/adrien-supizet/30min)
 
 ## Try the application
 
@@ -267,7 +298,7 @@ If you want to try Nested, go to : https://app.nested.fi/.
 
 It can help to better understand the protocol context.
 
-***
+---
 
 # Introduction
 
@@ -277,10 +308,10 @@ The platform allows users to put several digital assets, i.e. ERC20 tokens, insi
 
 Each NestedNFT is backed by underlying assets:
 
-- Purchased or sold on a decentralized exchange (AMM).
-- Collected/earned after adding liquidity or staking.
-- Exchanged/Minted on a protocol that is not a decentralized exchange.
-- (...)
+-   Purchased or sold on a decentralized exchange (AMM).
+-   Collected/earned after adding liquidity or staking.
+-   Exchanged/Minted on a protocol that is not a decentralized exchange.
+-   (...)
 
 The main idea is to allow adding modules (**operators**) to interact with new protocols
 and enable new assets, without re-deploying.
@@ -330,8 +361,8 @@ We want to be able to interact with any protocol in exchange for an ERC20 token.
 
 So, we had to deal with two issues :
 
-- How to interact with 5, 10, or 20 protocols without blowing up the bytecode size and having too much logic?
-- How to add new interactions without redeploying the `NestedFactory` contract?
+-   How to interact with 5, 10, or 20 protocols without blowing up the bytecode size and having too much logic?
+-   How to add new interactions without redeploying the `NestedFactory` contract?
 
 Our solution is called the "**Operator**"... A new interaction is a new operator and can be added on the fly.
 They kind of work like [libraries](https://docs.soliditylang.org/en/v0.8.9/contracts.html#libraries), but since we don't want to redeploy the factory,
@@ -387,9 +418,9 @@ The `NestedFactory` is using the operators to interact with other protocols. The
 
 An Order has several information:
 
-- The operator/selector to use
-- The token processed (swapped, stacked,...) by the operator (from the portfolio or wallet).
-- The calldatas (without the selector).
+-   The operator/selector to use
+-   The token processed (swapped, stacked,...) by the operator (from the portfolio or wallet).
+-   The calldatas (without the selector).
 
 ```javascript
 struct Order {
@@ -407,10 +438,10 @@ It helps us to make **one** interaction, but we want to make multiple interactio
 
 <div align="center"><img src="./static/input-orders.png" width="650"></div>
 
-- One same input for every orders but multiple outputs.
-- 0.3% fee on the input.
-- The input (_source_) is from a wallet **or** a porfolio owned by the transactions signer.
-- The ouput (_destination_) is the portfolio owned by the transactions signer (**only**).
+-   One same input for every orders but multiple outputs.
+-   0.3% fee on the input.
+-   The input (_source_) is from a wallet **or** a porfolio owned by the transactions signer.
+-   The ouput (_destination_) is the portfolio owned by the transactions signer (**only**).
 
 ```javascript
 struct BatchedInputOrders {
@@ -425,10 +456,10 @@ struct BatchedInputOrders {
 
 <div align="center"><img src="./static/output-orders.png" width="650"></div>
 
-- Multiple inputs for every orders but one output.
-- 0.3% fee on the output if operation does not reduce TVL, 0.8% if it does.
-- The input (_source_) is the portfolio owned by the transactions signer (**only**).
-- The ouput (_destination_) is from a wallet **or** a portfolio owned by the transactions signer.
+-   Multiple inputs for every orders but one output.
+-   0.3% fee on the output if operation does not reduce TVL, 0.8% if it does.
+-   The input (_source_) is the portfolio owned by the transactions signer (**only**).
+-   The ouput (_destination_) is from a wallet **or** a portfolio owned by the transactions signer.
 
 ```javascript
 struct BatchedOutputOrders {
@@ -444,7 +475,8 @@ struct BatchedOutputOrders {
 <div align="center"><img src="./static/processInputOrders.png" width="1200"></div>
 
 ## Nested Factory interaction with the Nested Reserve and Nested Records
-The Nested Reserve stores underlying assets of all NestedNFTs. The Nested Records keeps track of which underlying assets are associated with a specific NestedNFT. 
+
+The Nested Reserve stores underlying assets of all NestedNFTs. The Nested Records keeps track of which underlying assets are associated with a specific NestedNFT.
 Hence, each time the Nested Factory needs to interact with user funds (which are represented as a NestedNFT), it will first check the balance of tokens associated with the NestedNFT through Nested Records. If needed, it will then transfert funds to the Nested Reserve or withdraw funds from it.
 
 ## Native Token Management
@@ -466,13 +498,15 @@ In this case, the operator uses the Withdrawer to get the ETH back from the WETH
 > Only the Withdrawer can send ETH to the NestedFactory without automatic WETH conversion.
 
 ## Royalties
+
 Royalties are a part of the fee collected by the protocol and they are collected during every step of a copied portfolio lifecycle (copy, update, deposit, withdraw).
 
 ### Fees distribution
+
 For now, the fees are shared equally between portfolio creators (as royalties) and Nested.
 
 **First scenario:** When a portfolio is created from scratch, all fees go to Nested Finance Ltd and there are no royalties.<br/>
-**Second scenario:** When a portfolio is replicated, the fees are shared equally between Nested Finance Ltd. and the original creator of the Nested portfolio.  
+**Second scenario:** When a portfolio is replicated, the fees are shared equally between Nested Finance Ltd. and the original creator of the Nested portfolio.
 
 This distribution is done in the `feeSplitter.sol` with the ratio between the `royaltiesWeight` and the `shareholders` weights.
 Currently, we have `royaltiesWeight = 50` and **one** shareholder (_Nested_) with `weight = 50`.
@@ -487,8 +521,8 @@ Some functions of the protocol require admin rights (`onlyOwner` using `Ownable`
 
 The contracts are owned by the `OwnerProxy` which is a [DSProxy](https://github.com/dapphub/ds-proxy) fork without a cache, where only the Timelock can execute the scripts.
 
-The TimelockControllerEmergency is a [TimelockController](https://docs.openzeppelin.com/contracts/4.x/api/governance#TimelockController) fork. 
-It introduces the "Emergency Role" to execute a transaction in an instantaneous way. 
+The TimelockControllerEmergency is a [TimelockController](https://docs.openzeppelin.com/contracts/4.x/api/governance#TimelockController) fork.
+It introduces the "Emergency Role" to execute a transaction in an instantaneous way.
 Only the "Emergency Multisig" has this role, with 5 members and 5 approvals needed (in the case of an urgent fix).
 On the other hand, the "Operational Multisig" can schedule/execute transactions with a **6-hours** delay, with 3 members and 2 approvals needed.
 
@@ -496,51 +530,54 @@ On the other hand, the "Operational Multisig" can schedule/execute transactions 
 
 ## Setup
 
-- Install Node > 12
-- Install Yarn
-- Run `yarn install`
-- Run `cp .env.example .env`
-- Insert a dummy mnemonic and a mainnet api key in the `.env` file
+-   Install Node > 12
+-   Install Yarn
+-   Run `yarn install`
+-   Run `cp .env.example .env`
+-   Insert a dummy mnemonic and a mainnet api key in the `.env` file
 
 ### Run tests
+
 Tests can be run without fork, with a BSC fork or with an ETH fork by running `yarn test`.
 You can configure how to run the tests by configuring your `.env` file as follow:
 
-- To run the tests **without fork**:
+-   To run the tests **without fork**:
+
 ```bash
 FORKING="false"
 ```
 
-- To run the tests **with BSC fork**:
+-   To run the tests **with BSC fork**:
+
 ```bash
 FORKING="true"
 FORK_CHAINID="56"
 FORK_URL="https://bsc-dataseed.binance.org/"
 ```
 
-- To run the tests **with BSC fork**:
+-   To run the tests **with BSC fork**:
+
 ```bash
 FORKING="true"
 FORK_CHAINID="1"
 FORK_URL="<YOUR_ETH_RPC_ENDPOINT_URL>"
 ```
 
-
 ## Commands
 
-- Start a local blockchain
+-   Start a local blockchain
     `yarn run`
 
-- Start a hardhat console
+-   Start a hardhat console
     `yarn console`
 
-- Compile
+-   Compile
     `yarn compile`
 
-- Generate typechain files
+-   Generate typechain files
     `yarn typechain`
 
-- Run tests
+-   Run tests
     `yarn test`
 
 # License
