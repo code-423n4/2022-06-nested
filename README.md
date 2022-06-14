@@ -12,8 +12,12 @@
 - Starts June 15, 2022 20:00 UTC
 - Ends June 18, 2022 19:59 UTC
 
-## Scope
+## Scope 
+
 **TOTAL = 2 004 LOC & 21 Contracts**
+
+> In this README you can find references to smart contracts that **are not part of the scope** (_StakeDAO operator_ for exemple), these contracts are mentioned because it is important to understand them to have a better view of how the protocol works in general.
+
 ### Core scope
 | Contract name                                             |                                                      Github URL                                                                    | LoC |
 |-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|----:|
