@@ -166,7 +166,7 @@ The protocol is not fully compatible with deflationary/rebase tokens. In fact, y
 it can lead to unpredictable behaviors (positive or negative).
 We have chosen to manage the tokens with a fixed amount (the input) after considering several solutions.
 
-There are also tokens that have exotic implementations that will not handle to avoid unpredictable behaviors.
+There are also tokens that have exotic implementations that will not handle to avoid unpredictable behaviors, or bypass protocol operations.
 
 **So, how can we mitigate that ?**
 
@@ -174,21 +174,16 @@ We are maintaining a list of all rebase tokens (source coingecko, which is well 
 
 ### Low decimals and Fees calculation
 
-We can encounter tokens with different decimals and sometimes 0 decimals. This is the case with [MPS](https://etherscan.io/token/0x96c645D3D3706f793Ef52C19bBACe441900eD47D#readContract).
-The problem is that ETH has 18 decimals hence calculations can be problematic as we can loose precision.
-This problem is known and, for now, we do not take it into account as the subset of ERC20 tokens that have a small number of decimals is very small.
-
-For example, when computing fees, the amount in MPS, cannot be divided by 10,000 without leading the fees dropping to 0.
+We can encounter tokens with different decimals and sometimes 0 decimals. This is the case with [MPS](https://etherscan.io/token/0x96c645D3D3706f793Ef52C19bBACe441900eD47D#readContract). It can be problematic as we can loose precision when calculating fees.
 
 ### Miscellaneous already surfaced
 
-| Issue                                                                                         | Github URL                                                               |                                                                      Comment |
-| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------: |
-| `TransferOwnership` should be a two step process                                              | [link](https://github.com/code-423n4/2021-11-nested-findings/issues/101) |                                                                              |
-| `NestedAsset`: `mintWithMetadata` and `backfillTokenURI` are not used                         | [link](https://github.com/code-423n4/2021-11-nested-findings/issues/179) |                                                                              |
-| Accidentally calling `withdraw` twice with the same parameters could withdraw multiple assets | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/33)  |                         It is a front end and not related to smart contract. |
-| No slippage protection                                                                        | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/60)  | Slippage information is passed along to the DEX/AMM through `order.callData` |
-| Unbounded number of shareholders can cause DOS                                                | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/2)   |                                                                              |
+| Issue                                                                                         | Github URL                                                               |                                                                                                    Comment |
+| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------: |
+| `TransferOwnership` should be a two step process                                              | [link](https://github.com/code-423n4/2021-11-nested-findings/issues/101) |                                                                                                            |
+| `NestedAsset`: `mintWithMetadata` and `backfillTokenURI` are not used                         | [link](https://github.com/code-423n4/2021-11-nested-findings/issues/179) | We assume that the next factory might use these functions. Therefore we want to keep this unused function. |
+| Accidentally calling `withdraw` twice with the same parameters could withdraw multiple assets | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/33)  |                                                It is a front end and not really related to smart contract. |
+| Unbounded number of shareholders can cause DOS                                                | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/2)   |                                                                                                            |
 
 ### Gas optimizations already surfaced
 
@@ -197,12 +192,10 @@ For example, when computing fees, the amount in MPS, cannot be divided by 10,000
 | Use of constant keccak variables results in extra hashing                                                                           | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/71) |                                                                                                                           |
 | Use custom errors instead of the revert strings                                                                                     | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/63) |                                                                                                                           |
 | Change the incremental logic from `i++` to `++i`                                                                                    | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/16) |                                                                                                                           |
-| An array’s length should be cached in for-loops                                                                                     | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/28) |                                                                                                                           |
-| Add unchecked directive                                                                                                             | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/32) |                                                                                                                           |
-| Consider introducing an upper limit for `\_timestamp` in updateLockTimestamp                                                        | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/66) |                                                                               We are not sure about an upper limit to set |
-| There is no limit on how many operator that can be added                                                                            | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/58) | We don't know if we will remove this variable,It can be very useful to migrate funds (if needed, not used for the moment) |
-| Remove unused `ETH` variable from `FeeSplitter`                                                                                     | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/46) |                                                                                                                           |
-| Cache `shareholders` array                                                                                                          | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/43) |                                                                                           The array will no be very large |
+| An array’s length should be cached in for-loops                                                                                     | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/28) |                                                                                           When the array will no be large |
+| Consider introducing an upper limit for `_timestamp` in updateLockTimestamp                                                         | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/66) |                                                                               We are not sure about an upper limit to set |
+| There is no limit on how many operator that can be added                                                                            | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/58) |                                                                                                                           |
+| Remove unused `ETH` variable from `FeeSplitter`                                                                                     | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/46) | We don't know if we will remove this variable,It can be very useful to migrate funds (if needed, not used for the moment) |
 | Functions that add or remove `operators` or `shareholders` iterate over a whole array, consider using `EnumerableSet` to store them | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/67) |                                                                                                                           |
 | Function `withdraw` in `NestedFactory` calls `nestedRecords` twice                                                                  | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/67) |                                                                                                                           |
 
