@@ -15,7 +15,7 @@
 
 ## Scope 
 
-**TOTAL = 2 004 LOC & 21 Contracts**
+**TOTAL = 1923 LOC & 18 Contracts**
 
 > In this README you can find references to smart contracts that **are not part of the scope** (_StakeDAO operator_ for exemple), these contracts are mentioned because it is important to understand them to have a better view of how the protocol works in general.
 
@@ -39,9 +39,11 @@
 | /operators/Beefy/lp/BeefyZapBiswapLPVaultOperator  | [BeefyZapBiswapLPVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/lp/BeefyZapBiswapLPVaultOperator.sol)   | 167 |
 | /operators/Beefy/lp/BeefyZapUniswapLPVaultOperator | [BeefyZapUniswapLPVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/lp/BeefyZapUniswapLPVaultOperator.sol) | 166 |
 | /operators/Paraswap/ParaswapOperator               | [ParaswapOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Paraswap/ParaswapOperator.sol)                             |  35 |
-| /operators/Yearn/YearnCurveVaultOperator           | [YearnCurveVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Yearn/YearnCurveVaultOperator.sol)                  | 222 |
+| /operators/Yearn/YearnCurveVaultOperator           | [YearnCurveVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Yearn/YearnCurveVaultOperator.sol)                  | 286 |
 | /operators/Yearn/YearnVaultStorage                 | [YearnVaultStorage.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Yearn/YearnVaultStorage.sol)                              |  24 |
-| /libraries/CurveHelpers                            | [CurveHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/CurveHelpers/CurveHelpers.sol)                                 | 105 |
+| /libraries/CurveHelpers                            | [CurveHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/CurveHelpers/CurveHelpers.sol)                                 |  94 |
+| /libraries/StakingLPVaultHelpers                   | [StakingLPVaultHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/StakingLPVaultHelpers.sol)                            | 140 |
+
 
 ### Governance scope
 
