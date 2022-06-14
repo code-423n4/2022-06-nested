@@ -44,6 +44,7 @@
 | /libraries/CurveHelpers                            | [CurveHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/CurveHelpers/CurveHelpers.sol)                                 |  60 |
 | /libraries/StakingLPVaultHelpers                   | [StakingLPVaultHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/StakingLPVaultHelpers.sol)                            |  92 |
 
+⚠️ **Flat Operator** and **ZeroEx Operator** are out of scope.
 
 ### Governance scope
 
