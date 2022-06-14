@@ -56,6 +56,40 @@ The preview version has been audited 4 times (from oldest to newest):
 ## New version
 This new version includes the corrections of the previous audits and new features.
 
+### Fixes from [last audit](https://github.com/code-423n4/2022-02-nested)
+- **[QA Report fixes#99](https://github.com/NestedFi/nested-core-lego/pull/99)**
+    - QA Report [code-423n4/2022-02-nested-findings#4](https://github.com/code-423n4/2022-02-nested-findings/issues/4)
+    - QA Report [code-423n4/2022-02-nested-findings#9](https://github.com/code-423n4/2022-02-nested-findings/issues/9)
+    - QA Report [code-423n4/2022-02-nested-findings#24](https://github.com/code-423n4/2022-02-nested-findings/issues/24)
+    - QA Report [code-423n4/2022-02-nested-findings#40](https://github.com/code-423n4/2022-02-nested-findings/issues/40)
+    - QA Report [code-423n4/2022-02-nested-findings#45](https://github.com/code-423n4/2022-02-nested-findings/issues/45)
+    - QA Report [code-423n4/2022-02-nested-findings#49](https://github.com/code-423n4/2022-02-nested-findings/issues/49)
+    - QA Report [code-423n4/2022-02-nested-findings#50](https://github.com/code-423n4/2022-02-nested-findings/issues/50)
+    - QA Report [code-423n4/2022-02-nested-findings#52](https://github.com/code-423n4/2022-02-nested-findings/issues/52)
+    - QA Report [code-423n4/2022-02-nested-findings#65](https://github.com/code-423n4/2022-02-nested-findings/issues/65)
+    - QA Report [code-423n4/2022-02-nested-findings#70](https://github.com/code-423n4/2022-02-nested-findings/issues/70)
+- **[Gas optimizations fixes#101](https://github.com/NestedFi/nested-core-lego/pull/101)**
+    - Gas Optimizations [code-423n4/2022-02-nested-findings#72](https://github.com/code-423n4/2022-02-nested-findings/issues/72) ([f2fb697](https://github.com/NestedFi/nested-core-lego/commit/f2fb6974e0f471c027e7b2ed59c33f1052af54af))
+    - Gas Optimizations [code-423n4/2022-02-nested-findings#68](https://github.com/code-423n4/2022-02-nested-findings/issues/68) ([4c752b1](https://github.com/NestedFi/nested-core-lego/commit/4c752b16d8b76ce1e4e8779ba915f9e325d24ee5))
+    - Gas Optimizations [code-423n4/2022-02-nested-findings#67](https://github.com/code-423n4/2022-02-nested-findings/issues/67) ([5d75f4c](https://github.com/NestedFi/nested-core-lego/commit/5d75f4c620c7d11eab2507f85f204a97cfb3de36))
+    - Gas Optimizations [code-423n4/2022-02-nested-findings#57](https://github.com/code-423n4/2022-02-nested-findings/issues/57) ([f72f8e5](https://github.com/NestedFi/nested-core-lego/commit/f72f8e5137ab2bf2d1a4a0c8665dc9f1528fd37c))
+    - Gas Optimizations [code-423n4/2022-02-nested-findings#56](https://github.com/code-423n4/2022-02-nested-findings/issues/56) ([250bca4](https://github.com/NestedFi/nested-core-lego/commit/250bca42480a9a3282dcd4641a48b456f01d82a6))
+    - Gas Optimizations [code-423n4/2022-02-nested-findings#55](https://github.com/code-423n4/2022-02-nested-findings/issues/55) ([ca9b7fd](https://github.com/NestedFi/nested-core-lego/commit/ca9b7fd57c4758240cba842eceb135a0866deeb2))
+    - Gas Optimizations [code-423n4/2022-02-nested-findings#39](https://github.com/code-423n4/2022-02-nested-findings/issues/39) ([5cebd50](https://github.com/NestedFi/nested-core-lego/commit/5cebd505c29a0986c1311dc7d80c80b8a567e62a))
+    - Gas Optimizations [code-423n4/2022-02-nested-findings#32](https://github.com/code-423n4/2022-02-nested-findings/issues/32) ([835fb74](https://github.com/NestedFi/nested-core-lego/commit/835fb7451fe15b986513e2522c455e8ddb97d830))
+    - Gas Optimizations [code-423n4/2022-02-nested-findings#8](https://github.com/code-423n4/2022-02-nested-findings/issues/8)   ([51ccc99](https://github.com/NestedFi/nested-core-lego/commit/51ccc99a661a7e70335e189a430dfae0a0437988))
+    - Gas Optimizations [code-423n4/2022-02-nested-findings#5](https://github.com/code-423n4/2022-02-nested-findings/issues/5)   ([2a82425](https://github.com/NestedFi/nested-core-lego/commit/2a8242533aaced160f8c1b6d1fd617aca489eefb))
+    - Gas Optimizations [code-423n4/2022-02-nested-findings#28](https://github.com/code-423n4/2022-02-nested-findings/issues/28) ([33ab760](https://github.com/NestedFi/nested-core-lego/commit/33ab760e1600d5e10e0c4c968c18cb249f126c73))
+- **[Med/High Risk fixes#100](https://github.com/NestedFi/nested-core-lego/pull/100)**
+    - Undesired behavior [code-423n4/2022-02-nested-findings#6](https://github.com/code-423n4/2022-02-nested-findings/issues/6) ([0c71774](https://github.com/NestedFi/nested-core-lego/commit/0c717742a11fa31f6e8f9ef83545fc43b37e91d8))
+    - Royalty owner can steal Stakeholders fees [code-423n4/2022-02-nested-findings#10](https://github.com/code-423n4/2022-02-nested-findings/issues/10) ([e82319e](https://github.com/NestedFi/nested-core-lego/commit/e82319e36f32cb8b500c9b732d2b9669a21c0982))
+    - Gas Optimizations [code-423n4/2022-02-nested-findings#15](https://github.com/code-423n4/2022-02-nested-findings/issues/15) ([da9a817](https://github.com/NestedFi/nested-core-lego/commit/da9a817ad3f540f2f11724b265edebc03d1360a3))
+    - Wrong logic around areOperatorsImported [code-423n4/2022-02-nested-findings#17](https://github.com/code-423n4/2022-02-nested-findings/issues/17) ([720b450](https://github.com/NestedFi/nested-core-lego/commit/720b4502ca781be8575a131b1db6d98d0bf97629))
+    - Wrong rebuild cache logic [code-423n4/2022-02-nested-findings#18](https://github.com/code-423n4/2022-02-nested-findings/issues/18) ([d2e48a8](https://github.com/NestedFi/nested-core-lego/commit/d2e48a8950659bd176257df26e346bb87a774bc3))
+    - Destroy can avoid the bulk of fees [code-423n4/2022-02-nested-findings#27](https://github.com/code-423n4/2022-02-nested-findings/issues/27) ([2ab7934](https://github.com/NestedFi/nested-core-lego/commit/2ab79340b2ad21eaf74d6549a4bb7837e3379fd9))
+    - NestedFactory does not track operators properly [code-423n4/2022-02-nested-findings#38](https://github.com/code-423n4/2022-02-nested-findings/issues/38) ([1a16a51](https://github.com/NestedFi/nested-core-lego/commit/1a16a5104bdd3cc4fed320deba9d1d6ab6d630c2))
+    - NestedFactory: User can utilise accidentally sent ETH funds via processOutputOrders() / processInputAndOutputOrders() [code-423n4/2022-02-nested-findings#44](https://github.com/code-423n4/2022-02-nested-findings/issues/44) ([ac472b4](https://github.com/NestedFi/nested-core-lego/commit/ac472b425cda9e53a130ecd0149657bdc3ce2481))
+
 ### Ownership architecture
 _**Pull request:**_ [feat: OwnerProxy #116](https://github.com/NestedFi/nested-core-lego/pull/116)
 In order to complete the ownership architecture, we need the OwnerProxy contract in charge of executing scripts for the Timelock (run transactions atomically).
