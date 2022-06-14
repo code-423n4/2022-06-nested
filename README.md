@@ -15,7 +15,7 @@
 
 ## Scope 
 
-**TOTAL = 2 004 LOC & 21 Contracts**
+**TOTAL = 1733 LOC & 18 Contracts**
 
 > In this README you can find references to smart contracts that **are not part of the scope** (_StakeDAO operator_ for exemple), these contracts are mentioned because it is important to understand them to have a better view of how the protocol works in general.
 
@@ -39,9 +39,11 @@
 | /operators/Beefy/lp/BeefyZapBiswapLPVaultOperator  | [BeefyZapBiswapLPVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/lp/BeefyZapBiswapLPVaultOperator.sol)   | 167 |
 | /operators/Beefy/lp/BeefyZapUniswapLPVaultOperator | [BeefyZapUniswapLPVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Beefy/lp/BeefyZapUniswapLPVaultOperator.sol) | 166 |
 | /operators/Paraswap/ParaswapOperator               | [ParaswapOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Paraswap/ParaswapOperator.sol)                             |  35 |
-| /operators/Yearn/YearnCurveVaultOperator           | [YearnCurveVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Yearn/YearnCurveVaultOperator.sol)                  | 222 |
-| /operators/Yearn/YearnVaultStorage                 | [YearnVaultStorage.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Yearn/YearnVaultStorage.sol)                              |  24 |
-| /libraries/CurveHelpers                            | [CurveHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/CurveHelpers/CurveHelpers.sol)                                 | 105 |
+| /operators/Yearn/YearnCurveVaultOperator           | [YearnCurveVaultOperator.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Yearn/YearnCurveVaultOperator.sol)                  | 176 |
+| /operators/Yearn/YearnVaultStorage                 | [YearnVaultStorage.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Yearn/YearnVaultStorage.sol)                              |  26 |
+| /libraries/CurveHelpers                            | [CurveHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/CurveHelpers/CurveHelpers.sol)                                 |  60 |
+| /libraries/StakingLPVaultHelpers                   | [StakingLPVaultHelpers.sol](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/libraries/StakingLPVaultHelpers.sol)                            |  92 |
+
 
 ### Governance scope
 
@@ -100,7 +102,7 @@ This new version includes the corrections of the previous audits and new feature
     - NestedFactory does not track operators properly [code-423n4/2022-02-nested-findings#38](https://github.com/code-423n4/2022-02-nested-findings/issues/38) ([1a16a51](https://github.com/NestedFi/nested-core-lego/commit/1a16a5104bdd3cc4fed320deba9d1d6ab6d630c2))
     - NestedFactory: User can utilise accidentally sent ETH funds via processOutputOrders() / processInputAndOutputOrders() [code-423n4/2022-02-nested-findings#44](https://github.com/code-423n4/2022-02-nested-findings/issues/44) ([ac472b4](https://github.com/NestedFi/nested-core-lego/commit/ac472b425cda9e53a130ecd0149657bdc3ce2481))
 
-### Ownership architecture
+### Ownership architecture [(see more)](#ownership--governance)
 
 _**Pull request:**_ [feat: OwnerProxy #116](https://github.com/NestedFi/nested-core-lego/pull/116)
 In order to complete the ownership architecture, we need the OwnerProxy contract in charge of executing scripts for the Timelock (run transactions atomically).
@@ -109,34 +111,34 @@ In order to complete the ownership architecture, we need the OwnerProxy contract
 
 #### Beefy Single asset vault
 
-_**Pull request:**_ [[New Operator] - Beefy Single Asset Vault #107](https://github.com/NestedFi/nested-core-lego/pull/107)
-New operator to deposit/withdraw in [**Beefy single asset vaults**](https://app.beefy.finance/)
-This operatorcan be deployed on every chains where Beefy is available.
+_**Pull request:**_ [[New Operator] - Beefy Single Asset Vault #107](https://github.com/NestedFi/nested-core-lego/pull/107).
+New operator to deposit/withdraw in [**Beefy single asset vaults**](https://app.beefy.finance/).<br/>
+_This operator can be deployed on every chains where Beefy is available._
 
 #### Beefy LP vault
 
-_**Pull request:**_ [[New Operator] - Beefy LP Vault #114](https://github.com/NestedFi/nested-core-lego/pull/114)
-New operator to deposit/withdraw in [**Beefy LP asset vaults**](https://app.beefy.finance/)
-This operatorcan be deployed on every chains where Beefy is available.
+_**Pull request:**_ [[New Operator] - Beefy LP Vault #114](https://github.com/NestedFi/nested-core-lego/pull/114).
+New operator to deposit/withdraw in [**Beefy LP asset vaults**](https://app.beefy.finance/).<br/>
+_This operator can be deployed on every chains where Beefy is available._
 
 #### Paraswap
 
-_**Pull request:**_ [[New Operator] - Paraswap #109](https://github.com/NestedFi/nested-core-lego/pull/109)
-New operator to swap tokens in [Paraswap](https://app.paraswap.io/)
-This operatorcan be deployed on every chains where [Paraswap](https://app.paraswap.io/) is available.
+_**Pull request:**_ [[New Operator] - Paraswap #109](https://github.com/NestedFi/nested-core-lego/pull/109).
+New operator to swap tokens in [Paraswap](https://app.paraswap.io/).<br/>
+_This operator can be deployed on every chains where [Paraswap](https://app.paraswap.io/) is available._
 
 #### Yearn Curve vaults
 
-_**Pull request:**_ [[New Operator] StakeDAO + Yearn (curve pools) #119](https://github.com/NestedFi/nested-core-lego/pull/119)
-New operator to deposit/withdraw in [Yearn](https://yearn.finance/#/vaults) vaults that use [Curve](https://curve.fi/) managed assets.
-This operatorcan be deployed on every chains where [Yearn](https://yearn.finance/#/vaults) has Curve vault available.
+_**Pull request:**_ [[New Operator] StakeDAO + Yearn (curve pools) #119](https://github.com/NestedFi/nested-core-lego/pull/119).
+New operator to deposit/withdraw in [Yearn](https://yearn.finance/#/vaults) vaults that use [Curve](https://curve.fi/) managed assets.<br/>
+_This operator can be deployed on every chains where [Yearn](https://yearn.finance/#/vaults) has Curve vault available._
 
 > **NOTE**: This operator is almost identical to the **StakeDAO operator**, so we have only included the Yearn operator in the audit scope and not the StakeDAO one.
 > We factorized the code of these two operators in the libraries `StakingLPVaultHelpers.sol` and `CurveHelpers.sol`.
 
-### Entry/exit fees managment
+### Entry/exit fees management
 
-_**Pull request:**_ [feat: Upgradeable Fees #113](https://github.com/NestedFi/nested-core-lego/pull/113)
+_**Pull request:**_ [feat: Upgradeable Fees #113](https://github.com/NestedFi/nested-core-lego/pull/113).
 We had introduced upgradeability of fees and the notion of "EntryFees/ExitFees" (new values) :
 
 -   `EntryFees` : Applied when funds stay inside of the portfolio.
@@ -163,7 +165,7 @@ Currently the front-end doesn’t allow to duplicate a portfolio with the same a
 ### Deflationary, Rebase and exotic Tokens
 
 The protocol is not fully compatible with deflationary/rebase tokens. In fact, you can add a deflationary/rebase token to your portfolio but
-it can lead to unpredictable behaviors (positive or negative).
+it can lead to unpredictable behaviors (positive or negative, e.g [weird-erc20](https://github.com/d-xo/weird-erc20)).
 We have chosen to manage the tokens with a fixed amount (the input) after considering several solutions.
 
 There are also tokens that have exotic implementations that will not handle to avoid unpredictable behaviors, or bypass protocol operations.
@@ -180,24 +182,24 @@ We can encounter tokens with different decimals and sometimes 0 decimals. This i
 
 | Issue                                                                                         | Github URL                                                               |                                                                                                    Comment |
 | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------: |
-| `TransferOwnership` should be a two step process                                              | [link](https://github.com/code-423n4/2021-11-nested-findings/issues/101) |                                                                                                            |
-| `NestedAsset`: `mintWithMetadata` and `backfillTokenURI` are not used                         | [link](https://github.com/code-423n4/2021-11-nested-findings/issues/179) | We assume that the next factory might use these functions. Therefore we want to keep this unused function. |
-| Accidentally calling `withdraw` twice with the same parameters could withdraw multiple assets | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/33)  |                                                It is a front end and not really related to smart contract. |
-| Unbounded number of shareholders can cause DOS                                                | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/2)   |                                                                                                            |
+| `TransferOwnership` should be a two step process                                              | [issues#101](https://github.com/code-423n4/2021-11-nested-findings/issues/101) |                                                                                                            |
+| `NestedAsset`: `mintWithMetadata` and `backfillTokenURI` are not used                         | [issues#179](https://github.com/code-423n4/2021-11-nested-findings/issues/179) | We assume that the next factory might use these functions. Therefore we want to keep this unused function. |
+| Accidentally calling `withdraw` twice with the same parameters could withdraw multiple assets | [issue#/33](https://github.com/code-423n4/2022-02-nested-findings/issues/33)  |                                                It is a front end and not really related to smart contract. |
+| Unbounded number of shareholders can cause DOS                                                | [issu#s/2](https://github.com/code-423n4/2022-02-nested-findings/issues/2)   |                                                                                                            |
 
 ### Gas optimizations already surfaced
 
 | Issue                                                                                                                               | Github URL                                                              |                                                                                                                   Comment |
 | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------: |
-| Use of constant keccak variables results in extra hashing                                                                           | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/71) |                                                                                                                           |
-| Use custom errors instead of the revert strings                                                                                     | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/63) |                                                                                                                           |
-| Change the incremental logic from `i++` to `++i`                                                                                    | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/16) |                                                                                                                           |
-| An array’s length should be cached in for-loops                                                                                     | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/28) |                                                                                           When the array will no be large |
-| Consider introducing an upper limit for `_timestamp` in updateLockTimestamp                                                         | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/66) |                                                                               We are not sure about an upper limit to set |
-| There is no limit on how many operator that can be added                                                                            | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/58) |                                                                                                                           |
-| Remove unused `ETH` variable from `FeeSplitter`                                                                                     | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/46) | We don't know if we will remove this variable,It can be very useful to migrate funds (if needed, not used for the moment) |
-| Functions that add or remove `operators` or `shareholders` iterate over a whole array, consider using `EnumerableSet` to store them | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/67) |                                                                                                                           |
-| Function `withdraw` in `NestedFactory` calls `nestedRecords` twice                                                                  | [link](https://github.com/code-423n4/2022-02-nested-findings/issues/67) |                                                                                                                           |
+| Use of constant keccak variables results in extra hashing                                                                           | [issues#71](https://github.com/code-423n4/2022-02-nested-findings/issues/71) |                                                                                                                           |
+| Use custom errors instead of the revert strings                                                                                     | [issues#63](https://github.com/code-423n4/2022-02-nested-findings/issues/63) |                                                                                                                           |
+| Change the incremental logic from `i++` to `++i`                                                                                    | [issues#16](https://github.com/code-423n4/2022-02-nested-findings/issues/16) |                                                                                                                           |
+| An array’s length should be cached in for-loops                                                                                     | [issues#28](https://github.com/code-423n4/2022-02-nested-findings/issues/28) |                                                                                           When the array will no be large |
+| Consider introducing an upper limit for `_timestamp` in updateLockTimestamp                                                         | [issues#66](https://github.com/code-423n4/2022-02-nested-findings/issues/66) |                                                                               We are not sure about an upper limit to set |
+| There is no limit on how many operator that can be added                                                                            | [issues#58](https://github.com/code-423n4/2022-02-nested-findings/issues/58) |                                                                                                                           |
+| Remove unused `ETH` variable from `FeeSplitter`                                                                                     | [issues#46](https://github.com/code-423n4/2022-02-nested-findings/issues/46) | We don't know if we will remove this variable. It can be very useful to migrate funds (if needed, not used for the moment) |
+| Functions that add or remove `operators` or `shareholders` iterate over a whole array, consider using `EnumerableSet` to store them | [issues#67](https://github.com/code-423n4/2022-02-nested-findings/issues/67) |                                                                                                                           |
+| Function `withdraw` in `NestedFactory` calls `nestedRecords` twice                                                                  | [issues#67](https://github.com/code-423n4/2022-02-nested-findings/issues/67) |                                                                                                                           |
 
 ## Coverage
 
@@ -208,7 +210,7 @@ Run `npx hardhat coverage` to run test and generate the coverage summary.
 
 > To get the total coverage, it is necessary to run `npx hardhat coverage` with all the existing configurations, to reach all the written tests.
 
-> You can find the 3 existing configrations (BSC, ETH and without fork) in [.env.exemple](https://github.com/NestedFi/nested-core-lego/blob/master/.env.example) file.
+> You can find the 3 existing configurations (BSC, ETH and without fork) in [.env.example](https://github.com/NestedFi/nested-core-lego/blob/master/.env.example) file.
 
 ### Coverage ran without fork
 
