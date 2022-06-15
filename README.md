@@ -181,12 +181,11 @@ We can encounter tokens with different decimals and sometimes 0 decimals. This i
 
 ### Miscellaneous already surfaced
 
-| Issue                                                                                         | Github URL                                                               |                                                                                                    Comment |
-| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------: |
-| `TransferOwnership` should be a two step process                                              | [issues#101](https://github.com/code-423n4/2021-11-nested-findings/issues/101) |                                                                                                            |
-| `NestedAsset`: `mintWithMetadata` and `backfillTokenURI` are not used                         | [issues#179](https://github.com/code-423n4/2021-11-nested-findings/issues/179) | We assume that the next factory might use these functions. Therefore we want to keep this unused function. |
-| Accidentally calling `withdraw` twice with the same parameters could withdraw multiple assets | [issue#/33](https://github.com/code-423n4/2022-02-nested-findings/issues/33)  |                                                It is a front end and not really related to smart contract. |
-| Unbounded number of shareholders can cause DOS                                                | [issu#s/2](https://github.com/code-423n4/2022-02-nested-findings/issues/2)   |                                                                                                            |
+| Issue                                                                                         | Github URL                                                                     |                                                     Comment |
+| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------: |
+| `TransferOwnership` should be a two step process                                              | [issues#101](https://github.com/code-423n4/2021-11-nested-findings/issues/101) |                                                             |
+| Accidentally calling `withdraw` twice with the same parameters could withdraw multiple assets | [issue#/33](https://github.com/code-423n4/2022-02-nested-findings/issues/33)   | It is a front end and not really related to smart contract. |
+| Unbounded number of shareholders can cause DOS                                                | [issu#s/2](https://github.com/code-423n4/2022-02-nested-findings/issues/2)     |                                                             |
 
 ### Gas optimizations already surfaced
 
