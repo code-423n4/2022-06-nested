@@ -217,7 +217,7 @@ Run `npx hardhat coverage` to run test and generate the coverage summary.
 
 #### Global coverage - tested without fork
 
-> The missing coverage is tested in the [BSC fork context](#coverage-ran-in-bsc-fork-context) or the [ETH fork context](#coverage-ran-in-eth-fork-context)
+> The missing coverage is tested in the [BSC fork context](https://github.com/code-423n4/2022-06-nested/blob/main/README.md#coverage-ran-in-bsc-fork-context) or the [ETH fork context](https://github.com/code-423n4/2022-06-nested/blob/main/README.md#coverage-ran-in-eth-fork-context)
 
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/without-fork-1.png"></div>
 
@@ -229,13 +229,13 @@ Run `npx hardhat coverage` to run test and generate the coverage summary.
 
 #### Libraries - tested on ETH fork
 
-> The rest of the coverage is in the BSC fork coverage context under [Libraries - tested on BSC fork](#libraries---tested-on-bsc-fork).
+> The rest of the coverage is in the BSC fork coverage context under [Libraries - tested on BSC fork](https://github.com/code-423n4/2022-06-nested/blob/main/README.md#libraries---tested-on-bsc-fork).
 
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/eth-2.png"></div>
 
 #### CurveHelpers - tested on ETH fork
 
-> The rest of the coverage is in the BSC fork coverage context under [CurveHelpers - tested on BSC fork](#curvehelpers---tested-on-bsc-fork).
+> The rest of the coverage is in the BSC fork coverage context under [CurveHelpers - tested on BSC fork](https://github.com/code-423n4/2022-06-nested/blob/main/README.md#curvehelpers---tested-on-bsc-fork).
 
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/eth-3.png"></div>
 
@@ -247,13 +247,13 @@ Run `npx hardhat coverage` to run test and generate the coverage summary.
 
 #### Libraries - tested on BSC fork
 
-> The rest of the coverage is in the ETH fork coverage context under [Libraries - tested on ETH fork](#libraries---tested-on-eth-fork).
+> The rest of the coverage is in the ETH fork coverage context under [Libraries - tested on ETH fork](https://github.com/code-423n4/2022-06-nested/blob/main/README.md#libraries---tested-on-eth-fork).
 
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-2.png"></div>
 
 #### CurveHelpers - tested on BSC fork
 
-> The rest of the coverage is in the ETH fork coverage context under [CurveHelpers - tested on ETH fork](#curvehelpers---tested-on-eth-fork).
+> The rest of the coverage is in the ETH fork coverage context under [CurveHelpers - tested on ETH fork](https://github.com/code-423n4/2022-06-nested/blob/main/README.md#curvehelpers---tested-on-eth-fork).
 
 <div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-3.png"></div>
 
@@ -397,9 +397,9 @@ When deploying an operator, it will also deploy the storage contract and transfe
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
 | OperatorResolver               | Allows the factory to identify which operator to interact with.                                                          |
 | MixinOperatorResolver          | Abstract contract to load authorized operators in cache.                                                                 |
-| ZeroExOperator                 | Performs token swaps through 0x ([read more](contracts/operators/ZeroEx/README.md)).                                     |
+| ZeroExOperator                 | Performs token swaps through 0x ([read more](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/ZeroEx/README.md)).                                     |
 | ZeroExStorage                  | ZeroExOperator storage contract. Must store the 0x `swapTarget`.                                                         |
-| FlatOperator                   | Handles deposits and withdraws. No interaction with any third parties ([read more](contracts/operators/Flat/README.md)). |
+| FlatOperator                   | Handles deposits and withdraws. No interaction with any third parties ([read more](https://github.com/code-423n4/2022-06-nested/blob/main/contracts/operators/Flat/README.md)). |
 | BeefyVaultOperator             | Handles deposits and withdraws in a Beefy single vault (native or non-native).                                           |
 | BeefyZapBiswapLPVaultOperator  | Handles deposits and withdraws in a Beefy Biswap LP vault using zapper.                                                  |
 | BeefyZapUniswapLPVaultOperator | Handles deposits and withdraws in a Beefy UniswapV2 LP vault using zapper.                                               |
