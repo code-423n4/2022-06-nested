@@ -219,11 +219,11 @@ Run `npx hardhat coverage` to run test and generate the coverage summary.
 
 > The missing coverage is tested in the [BSC fork context](https://github.com/code-423n4/2022-06-nested/blob/main/README.md#coverage-ran-in-bsc-fork-context) or the [ETH fork context](https://github.com/code-423n4/2022-06-nested/blob/main/README.md#coverage-ran-in-eth-fork-context)
 
-<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/without-fork-1.png"></div>
+<div align="left"><img style="width:100%; max-width: 1000px" src="https://github.com/code-423n4/2022-06-nested/blob/main/static/coverage-screenshots/without-fork-1.png"></div>
 
 #### Main contracts - tested without fork
 
-<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/without-fork-2.png"></div>
+<div align="left"><img style="width:100%; max-width: 1000px" src="https://github.com/code-423n4/2022-06-nested/blob/main/static/coverage-screenshots/without-fork-2.png"></div>
 
 ### Coverage ran in ETH fork context
 
@@ -231,17 +231,17 @@ Run `npx hardhat coverage` to run test and generate the coverage summary.
 
 > The rest of the coverage is in the BSC fork coverage context under [Libraries - tested on BSC fork](https://github.com/code-423n4/2022-06-nested/blob/main/README.md#libraries---tested-on-bsc-fork).
 
-<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/eth-2.png"></div>
+<div align="left"><img style="width:100%; max-width: 1000px" src="https://github.com/code-423n4/2022-06-nested/blob/main/static/coverage-screenshots/eth-2.png"></div>
 
 #### CurveHelpers - tested on ETH fork
 
 > The rest of the coverage is in the BSC fork coverage context under [CurveHelpers - tested on BSC fork](https://github.com/code-423n4/2022-06-nested/blob/main/README.md#curvehelpers---tested-on-bsc-fork).
 
-<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/eth-3.png"></div>
+<div align="left"><img style="width:100%; max-width: 1000px" src="https://github.com/code-423n4/2022-06-nested/blob/main/static/coverage-screenshots/eth-3.png"></div>
 
 #### Yearn curve vault operator
 
-<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/eth-4.png"></div>
+<div align="left"><img style="width:100%; max-width: 1000px" src="https://github.com/code-423n4/2022-06-nested/blob/main/static/coverage-screenshots/eth-4.png"></div>
 
 ### Coverage ran in BSC fork context
 
@@ -249,18 +249,18 @@ Run `npx hardhat coverage` to run test and generate the coverage summary.
 
 > The rest of the coverage is in the ETH fork coverage context under [Libraries - tested on ETH fork](https://github.com/code-423n4/2022-06-nested/blob/main/README.md#libraries---tested-on-eth-fork).
 
-<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-2.png"></div>
+<div align="left"><img style="width:100%; max-width: 1000px" src="https://github.com/code-423n4/2022-06-nested/blob/main/static/coverage-screenshots/bsc-2.png"></div>
 
 #### CurveHelpers - tested on BSC fork
 
 > The rest of the coverage is in the ETH fork coverage context under [CurveHelpers - tested on ETH fork](https://github.com/code-423n4/2022-06-nested/blob/main/README.md#curvehelpers---tested-on-eth-fork).
 
-<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-3.png"></div>
+<div align="left"><img style="width:100%; max-width: 1000px" src="https://github.com/code-423n4/2022-06-nested/blob/main/static/coverage-screenshots/bsc-3.png"></div>
 
 #### Beefy operators
 
-<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-5.png"></div>
-<div align="left"><img style="width:100%; max-width: 1000px" src="/static/coverage-screenshots/bsc-6.png"></div>
+<div align="left"><img style="width:100%; max-width: 1000px" src="https://github.com/code-423n4/2022-06-nested/blob/main/static/coverage-screenshots/bsc-5.png"></div>
+<div align="left"><img style="width:100%; max-width: 1000px" src="https://github.com/code-423n4/2022-06-nested/blob/main/static/coverage-screenshots/bsc-6.png"></div>
 
 ## Links
 
@@ -432,7 +432,7 @@ It helps us to make **one** interaction, but we want to make multiple interactio
 
 #### Batched Input Orders
 
-<div align="center"><img src="./static/input-orders.png" width="650"></div>
+<div align="center"><img src="https://github.com/code-423n4/2022-06-nested/blob/main/static/input-orders.png" width="650"></div>
 
 -   One same input for every orders but multiple outputs.
 -   0.3% fee on the input.
@@ -450,7 +450,7 @@ struct BatchedInputOrders {
 
 #### Batched Output Orders
 
-<div align="center"><img src="./static/output-orders.png" width="650"></div>
+<div align="center"><img src="https://github.com/code-423n4/2022-06-nested/blob/main/static/output-orders.png" width="650"></div>
 
 -   Multiple inputs for every orders but one output.
 -   0.3% fee on the output if operation does not reduce TVL, 0.8% if it does.
@@ -468,7 +468,7 @@ struct BatchedOutputOrders {
 
 #### Example `processInputOrders` flow
 
-<div align="center"><img src="./static/processInputOrders.png" width="1200"></div>
+<div align="center"><img src="https://github.com/code-423n4/2022-06-nested/blob/main/static/processInputOrders.png" width="1200"></div>
 
 ## Nested Factory interaction with the Nested Reserve and Nested Records
 
@@ -513,7 +513,7 @@ Currently, we have `royaltiesWeight = 50` and **one** shareholder (_Nested_) wit
 
 Some functions of the protocol require admin rights (`onlyOwner` using `Ownable` from [OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol)). Same with the [TransparentUpgradeableProxy](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/proxy/transparent/TransparentUpgradeableProxy.sol) which need an **Admin**.
 
-<img width="1011" alt="image" src="./static/ownership.png">
+<img width="1011" alt="image" src="https://github.com/code-423n4/2022-06-nested/blob/main/static/ownership.png">
 
 The contracts are owned by the `OwnerProxy` which is a [DSProxy](https://github.com/dapphub/ds-proxy) fork without a cache, where only the Timelock can execute the scripts.
 
