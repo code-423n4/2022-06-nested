@@ -8,7 +8,7 @@
 -   $33,250 USDC main award pot
 -   $1,750 USDC gas optimization award pot
 -   Join [C4 Discord](https://discord.gg/code4rena) to register
--   Submit findings [using the C4 form](https://code4rena.com/contests/2022-06-nested-contest/submit)
+-   Submit findings [using the C4 form](https://code4rena.com/contests/2022-06-nested-finance-contest/submit)
 -   [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 -   Starts June 15, 2022 20:00 UTC
 -   Ends June 18, 2022 19:59 UTC
@@ -58,8 +58,8 @@
 
 The preview version has been audited 4 times (from oldest to newest):
 
--   [Peckshield Audit Report v1.0](audits/PeckShield-Audit-Report-Nested-v1.0.pdf)
--   [Red4Sec Audit Report v1.0](audits/Red4Sec_Nested_Finance_Security_Audit_Report_v3.pdf)
+-   [Peckshield Audit Report v1.0](https://github.com/code-423n4/2022-06-nested/blob/main/audits/PeckShield-Audit-Report-Nested-v1.0.pdf)
+-   [Red4Sec Audit Report v1.0](https://github.com/code-423n4/2022-06-nested/blob/main/audits/Red4Sec_Nested_Finance_Security_Audit_Report_v3.pdf)
 -   [CodeArena 2021-11](https://code4rena.com/reports/2021-11-nested)
 -   [CodeArena 2022-02](https://code4rena.com/reports/2022-02-nested)
 
