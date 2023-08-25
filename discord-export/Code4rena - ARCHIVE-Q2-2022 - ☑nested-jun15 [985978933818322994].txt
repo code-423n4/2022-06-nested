@@ -1,0 +1,172 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q2-2022 / ☑nested-jun15
+==============================================================
+
+[06/13/2022 6:53 PM] kartoonjoy
+👋 Hello and welcome to the contest channel for the $35K USDC **Nested Finance** contest!
+
+📆 Contest opens 06/15/2022 8:00 PM (20:00 UTC) and runs through 06/18/2022 7:59 PM (19:59 UTC) (3 days).
+
+Please give a warm welcome to the Nested Finance team, particularly @Adrien, who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-06-nested-finance-contest
+
+{Embed}
+https://code4rena.com/contests/2022-06-nested-finance-contest
+Code4rena Nested Finance contest
+$35,000 USDC
+15 June 2022—18 June 2022
+Code4rena - ARCHIVE-Q2-2022 - ☑nested-jun15 [985978933818322994].txt_Files/C4-banner-7C19B.png
+
+{Reactions}
+C4Keycap (5) 
+
+[06/15/2022 8:20 PM] okkothejawa
+@Adrien DMs are closed, sent a friendship request
+
+
+[06/16/2022 3:25 PM] elku.cryptos
+any other gas optimizations other than mentioned here are valid right?
+https://github.com/code-423n4/2022-06-nested#gas-optimizations-already-surfaced
+
+{Embed}
+https://github.com/code-423n4/2022-06-nested
+GitHub - code-423n4/2022-06-nested
+Contribute to code-423n4/2022-06-nested development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q2-2022 - ☑nested-jun15 [985978933818322994].txt_Files/e402ce6b-42bb-4fc0-aeb6-54c6e94aec29-15CDB
+
+
+[06/16/2022 4:19 PM] axxe8561
+Yes 👍🏻
+
+
+[06/17/2022 5:49 AM] pierrickgt
+Hi @axxe,
+I have a question regarding the various operators.
+For example, if I take the BeefyVault contract. I can see that we call the `deposit` function to deposit in the Beefy vault: https://github.com/code-423n4/2022-06-nested/blob/b253ed80f67d1bb2a04e1702f5796fd96a7c521e/contracts/operators/Beefy/BeefyVaultOperator.sol#L49
+In exchange, the BeefyVaultOperator contract receives tokens representing the shares of deposit in the vault.
+So now, these tokens are living in the BeefyVaultOperator but when are they sent to the Reserve? Does this happen in the NestedFactory contract? Or does these tokens stay in the BeefyVaultOperator contract?
+
+
+[06/17/2022 5:51 AM] 100proof
+Hey all, I just thought I'd inform you about something you can do when you post links. In order to reduce the amount screen "real estate" taken up you can hover over the images and click on the little X and then click on "Remove All Embeds".
+
+{Reactions}
+thankyou 
+
+[06/17/2022 5:53 AM] axxe8561
+Hey ! The operators are called via delegatecall by the NestedFactory. So the NestedFactory receive the tokens and send them to the reserve
+
+{Reactions}
+👌 
+
+[06/17/2022 5:55 AM] axxe8561
+@Pierrick https://github.com/code-423n4/2022-06-nested#operators-modularization
+
+{Embed}
+https://github.com/code-423n4/2022-06-nested
+GitHub - code-423n4/2022-06-nested
+Contribute to code-423n4/2022-06-nested development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q2-2022 - ☑nested-jun15 [985978933818322994].txt_Files/e402ce6b-42bb-4fc0-aeb6-54c6e94aec29-15CDB
+
+{Reactions}
+👍 
+
+[06/18/2022 5:18 PM] acegawd
+@Adrien DM
+
+
+[06/18/2022 8:02 PM] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **Nested Finance** contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: the **Nested Finance** team will review the findings over the next couple of days, and then we'll pass them off to the judge. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+
+[08/19/2022 8:02 PM] itsmetechjay
+🤑 🎉 Awards for **Nested Finance**:
+
+$29,831.82 USDC » @Django | Saloon Finance 
+$863.98 USDC » @Meera 
+$631.81 USDC » @0xNazgul 
+$533.24 USDC » @IllIllI 
+$305.13 USDC » @Chom 
+$236.67 USDC » @joestakey 
+$189.71 USDC » @simon135 
+$164.97 USDC » @Pierrick 
+$153.52 USDC » @codexploder 
+$130.07 USDC » @MiloTruck 
+$122.07 USDC » @_Adam 
+$118.01 USDC » @delfin454000 
+$118.01 USDC » @fatherOfBlocks 
+$116.54 USDC » @thinklab 
+$116.54 USDC » @TerrierLover 
+$104.60 USDC » 0xf15ers (@remora0, @twojoy)
+$104.60 USDC » BowTiedWardens (@BowTiedHeron, @BowTiedPickle, @m4rio.eth, @Dravee , @BowTiedFirefox)
+$104.60 USDC » @Dravee 
+$104.60 USDC » @cccz 
+$83.14 USDC » @0xkatana 
+$83.14 USDC » @ElKu 
+$83.14 USDC » @minhquanym 
+$83.14 USDC » @Waze 
+$81.82 USDC » @0xFar5eer 
+$81.82 USDC » @hansfriese 
+$81.82 USDC » @cryptphi 
+$45.01 USDC » @c3phas 
+$40.25 USDC » @0xKitsune 
+$40.25 USDC » @UnusualTurtle 
+$36.19 USDC » @robee 
+$36.19 USDC » @sach1r0 
+$34.72 USDC » @0x1f8b 
+$34.72 USDC » @Sloth 
+$34.72 USDC » @JC
+$34.72 USDC » @Picodes | Angle 
+$34.72 USDC » @SooYa 
+
+🏁 Findings summary
+---------------------------
+Med risk findings: 1 total, 1 unique
+Gas optimization reports: 27
+QA reports: 22
+
+Awards will be distributed on Polygon within the next 1-2 weeks. Congratulations all! 💸 💸 💸
+
+{Reactions}
+🎉 (8) 
+
+[08/19/2022 8:08 PM] minh___
+django essentially took the whole pool with a single medium finding lol
+
+{Reactions}
+nice (8) 💯 (6) 🤣 (2) 
+
+[08/19/2022 8:10 PM] bernd_42
+Awesome finding Django! Congrats 🎉
+
+{Reactions}
+💯 (9) 👆 (2) 
+
+[08/19/2022 8:21 PM] 0xdjango
+Thank you!!
+
+{Reactions}
+🔥 (15) 
+
+[09/22/2022 9:55 PM] rokinot
+https://code4rena.com/reports/2022-06-nested
+
+{Embed}
+https://code4rena.com/reports/2022-06-nested
+Nested Finance contest
+Hack DeFi. Compete. Get paid.
+
+{Reactions}
+🔥 (2) 
+
+==============================================================
+Exported 15 message(s)
+==============================================================
